@@ -22,20 +22,21 @@ opracowanej przez Tomasza Przechlewskiego dla Wydziału Zarządzania, UG.
 
 <dt><code>palatino</code></dt>
 <dd>skład krojem QuasiPalladio;</dd>
-<dt><code>brudnopis</code></dt>
-<dd>wstępna wersja pracy: drukowanie z pojedynczym odstępem
-i oznaczanie każdej strony numerem wersji oraz datą;</dd>
-<dt><code>xodstep</code></dt><dd>zwiększenie odstępu 
- między wierszami.</dd>
-</dl>
-<!-- ................. -->
-<h4>Dodatkowe polecenia i środowiska zdefiniowane 
-w klasie <code>wimgr</code>:</h4>
-<dl>
 
+<dt><code>brudnopis</code></dt>
+<dd>wstępna wersja pracy: drukowanie z pojedynczym odstępem
+i oznaczanie każdej strony numerem wersji oraz datą;</dd>
+
+<dt><code>xodstep</code></dt>
+<dd>zwiększenie odstępu między wierszami.</dd>
+</dl>
+
+### Dodatkowe polecenia i środowiska
+
+<dl>
 <dt><code>\UniversityName</code></dt>
 <dd>Nazwa szkoły, drukowana na górze strony tytyłowej 
-(domyślnie <em>Uniwersytet Gdański -- Wydział Zarządzania</em>);
+(domyślnie <em>Uniwersytet Gdański – Instytut Informatyki</em>);
 </dd>
 
 <dt><code>\oswiadczenie</code></dt>
@@ -45,50 +46,55 @@ umieścić na końcu pracy, tj. przed <code>\end{document}</code>);</dd>
 
 <dt><code>\autor</code></dt>
 <dd>imię oraz nazwisko autora;</dd>
+
 <dt><code>\nralbumu</code></dt>
 <dd>numer albumu;</dd>
+
 <dt><code>\email</code></dt> 
 <dd>adres email autora (opcjonalnie);</dd>
+
 <dt><code>\kierunek</code></dt>
 <dd>nazwa kierunku, np. Informatyka Ekonomiczna;</dd>
+
 <dt><code>\opiekun</code></dt>
 <dd>tytuł naukowy, imię i nazwisko promotora;</dd>
+
 <dt><code>\miejsce</code></dt>
 <dd>miejsce obrony (opcjonalnie), jeżeli nie podano 
   zostanie wpisany Sopot;</dd>
+
 <dt><code>\keywords</code></dt>
 <dd>lista słów kluczowych (oddzielonych przecinkami);</dd>
+
 <dt><code>abstract</code></dt> 
 <dd>streszczenie (środowisko);</dd>
+
 <dt><code>\introduction</code></dt> 
 <dd>wstęp;</dd>
+
 <dt><code>\summary</code></dt> 
 <dd>zakończenie;</dd>
+
 <dt><code>\source</code></dt> 
 <dd>źródło, umieszczane pod tabelą i rysunkiem;</dd>
+
 <dt><code>\nrwersji</code></dt> 
 <dd>etykieta wersji dokumentu.</dd>
 </dl>
 
-<h4>Uwagi:</h4>
-<p>
- Polecenia <code>\autor</code>, <code>\nralbumu</code> (ewentualnie
- <code>\email</code>) można wstawić wielokrotnie jeżeli praca jest
- dziełem kilku autorów.
-</p>
+## Uwagi
 
-<p>Polecenie <code>\oswiadczenie</code> zostało dodane do wersji 1.03
-pakietu a polecenie \UniversityName do wersji 1.04.
-</p>
+Polecenia `\autor`, `\nralbumu` (ewentualnie
+`\email`) można wstawić wielokrotnie jeżeli praca jest
+dziełem kilku autorów.
 
-<p>
- Klasa wykorzystuje następujące pakiety: <code>graphicx</code>,
- <code>polski</code>, <code>hyperref</code>, <code>url</code>.
-</p>
+Klasa wykorzystuje następujące pakiety: `graphicx`,
+`polyglossia`, `hyperref`, `url`.
 
-<h4>Przykładowa struktura pracy:</h4>
-<pre>%&amp; --translate-file=il2-pl
-\documentclass[skorowidz,palatino,brudnopis]{wimgr}
+## Przykład szablon pracy
+
+<pre>
+\documentclass[skorowidz,brudnopis]{xmgr}
 \nrwersji {<em>etykieta</em>}
 
 \UniversityName {Nazwa-Szkoły}
@@ -112,36 +118,31 @@ pakietu a polecenie \UniversityName do wersji 1.04.
 \begin{abstract}... \end{abstract}
 \keywords{<em>słowo-kluczowe</em>, <em>słowo-kluczowe</em>, ... }
 \maketitle
+
 % --- początek pracy ---
 % Wstęp
 \introduction
 ...
-
 \chapter{<em>tytuł-rozdziału</em>}
 ....
-    
 \section{<em>tytuł-podrozdziału</em>}
 ...
 \section{<em>tytuł-podrozdziału</em>}
-...
 ...
 % Zakończenie
 \summary
 ...
-
 % Załączniki (opcjonalnie):
 \appendix
 \chapter{<em>tytuł-załącznika</em>}
 ...
 \chapter{<em>tytuł-załącznika</em>}
 ...
-
 % Literatura:
 \begin{thebibliography}{99}
 ...
 \end{thebibliography}
-
-% Spisy tabel i rysunków (jeżeli są potrzebne):
+% Spisy tabel i rysunków (jeśli występują w pracy):
 \listoftables
 \listoffigures
 
