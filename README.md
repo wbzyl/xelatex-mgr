@@ -1,74 +1,60 @@
-<?xml version='1.0' encoding='iso-8859-2' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" >
- <!--"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">-->
- <!-- $Id:$ -->
-<html xmlns="http://www.w3.org/1999/xhtml">
- <head>
- <meta http-equiv="content-type" content="text/html; charset=iso-8859-2" />
- <meta name="DC.creator" content="Tomasz Przechlewski" />
- <meta name='DC.date' content='2007-06-07T12:42:28CEST'/>
- <meta name='DC.rights' content='(c) Tomasz Przechlewski'/>
- <meta name="DC.title" content="Przygotowanie pracy licencjackiej/magisterskiej w systemie LaTeX: klasa wimgr"/>
- <title>Przygotowanie pracy licencjackiej/magisterskiej w systemie LaTeX: klasa wimgr</title>
-</head>
-<body>
+# XMGR (adaptacja wimgr v1.04, 12/2007)
 
-<h3 class='main'>Przygotowanie pracy licencjackiej/magisterskiej: 
-  klasa <code>wimgr</code></h3>
+## Przygotowanie pracy licencjackiej/magisterskiej
+   klasa **xmgr*
 
 <p>
- Klasa <code>wimgr</code> umożliwia sprawne i wygodne przygotowanie
- pracy magisterskiej lub licencjackiej zgodnie z wymogami
- obowiązującymi na kierunku Informatyka w systemie LaTeX.
- <i>Klasa jest adaptacją, klasy <a href="http://gnu.univ.gda.pl/~tomasz/prog/tex/wzmgr/wzmgr.html">wzmgr</a>
-	 opracowanej przez Tomasza Przechlewskiego dla Wydziału Zarządzania.</i>
+ Klasa <code>wimgr</code> umoĹźliwia sprawne iÂ wygodne przygotowanie
+ pracy magisterskiej lub licencjackiej zgodnie zÂ wymogami
+ obowiÄzujÄcymi na kierunku Informatyka wÂ systemie LaTeX.
+ <i>Klasa jest adaptacjÄ, klasy <a href="http://gnu.univ.gda.pl/~tomasz/prog/tex/wzmgr/wzmgr.html">wzmgr</a>
+	 opracowanej przez Tomasza Przechlewskiego dla WydziaĹu ZarzÄdzania.</i>
 </p>
 
 <p>
- Archiwum zawierające klasę + przykładowy dokument: 
+ Archiwum zawierajÄce klasÄ + przykĹadowy dokument: 
  <a href="./wimgr.zip">wimgr.zip</a>.
- Przykładowy dokument w formacie PDF:
+ PrzykĹadowy dokument wÂ formacie PDF:
  <a href="./wimgr.pdf">wimgr.pdf</a>.
- Różne <a href="http://gnu.univ.gda.pl/~tomasz/prog/tex/wzmgr/wip.html">wskazówki i podpowiedzi</a> dotyczące LaTeXa.
+ RĂłĹźne <a href="http://gnu.univ.gda.pl/~tomasz/prog/tex/wzmgr/wip.html">wskazĂłwki iÂ podpowiedzi</a> dotyczÄce LaTeXa.
 </p>
 <!-- ................. -->
 <h4>Opcje klasy <code>wimgr</code>:</h4>
 <dl>
 <dt><code>magisterska</code></dt>
-<dd>praca magisterska (wartość domyślna);</dd>
+<dd>praca magisterska (wartoĹÄ domyĹlna);</dd>
 
 <dt><code>licencjacka</code></dt>
 <dd>praca licencjacka;</dd>
 
 <dt><code>skorowidz</code></dt>
-<dd>praca będzie zawierała skorowidz;</dd>
+<dd>praca bÄdzie zawieraĹa skorowidz;</dd>
 
 <dt><code>palatino</code></dt>
-<dd>skład krojem QuasiPalladio;</dd>
+<dd>skĹad krojem QuasiPalladio;</dd>
 <dt><code>brudnopis</code></dt>
-<dd>wstępna wersja pracy: drukowanie z pojedynczym odstępem
-i oznaczanie każdej strony numerem wersji oraz datą;</dd>
-<dt><code>xodstep</code></dt><dd>zwiększenie odstępu 
- między wierszami.</dd>
+<dd>wstÄpna wersja pracy: drukowanie zÂ pojedynczym odstÄpem
+iÂ oznaczanie kaĹźdej strony numerem wersji oraz datÄ;</dd>
+<dt><code>xodstep</code></dt><dd>zwiÄkszenie odstÄpu 
+ miÄdzy wierszami.</dd>
 </dl>
 <!-- ................. -->
-<h4>Dodatkowe polecenia i środowiska zdefiniowane 
-w klasie <code>wimgr</code>:</h4>
+<h4>Dodatkowe polecenia iÂ Ĺrodowiska zdefiniowane 
+wÂ klasie <code>wimgr</code>:</h4>
 <dl>
 
  <dt><code>\UniversityName</code></dt>
- <dd>Nazwa szkoły, drukowana na górze strony tytyłowej 
- (domyślnie <em>Uniwersytet Gdański -- Wydział Zarządzania</em>);
+ <dd>Nazwa szkoĹy, drukowana na gĂłrze strony tytyĹowej 
+ (domyĹlnie <em>Uniwersytet GdaĹski -- WydziaĹ ZarzÄdzania</em>);
  </dd>
 
  <dt><code>\oswiadczenie</code></dt>
- <dd>tekst oświadczenia o samodzielnym wykonaniu pracy, określony
- w piśmie okólnym Rektora UG z dnia 13 grudnia 2004 (należy
- umieścić na końcu pracy, tj. przed <code>\end{document}</code>);</dd>
+ <dd>tekst oĹwiadczenia oÂ samodzielnym wykonaniu pracy, okreĹlony
+ wÂ piĹmie okĂłlnym Rektora UG zÂ dnia 13Â grudniaÂ 2004 (naleĹźy
+ umieĹciÄ na koĹcu pracy, tj.Â przed <code>\end{document}</code>);</dd>
 
  <dt><code>\autor</code></dt>
- <dd>imię oraz nazwisko autora;</dd>
+ <dd>imiÄ oraz nazwisko autora;</dd>
  <dt><code>\nralbumu</code></dt>
  <dd>numer albumu;</dd>
  <dt><code>\email</code></dt> 
@@ -76,20 +62,20 @@ w klasie <code>wimgr</code>:</h4>
  <dt><code>\kierunek</code></dt>
  <dd>nazwa kierunku, np. Informatyka Ekonomiczna;</dd>
  <dt><code>\opiekun</code></dt>
- <dd>tytuł naukowy, imię i nazwisko promotora;</dd>
+ <dd>tytuĹ naukowy, imiÄ iÂ nazwisko promotora;</dd>
  <dt><code>\miejsce</code></dt>
- <dd>miejsce obrony (opcjonalnie), jeżeli nie podano 
+ <dd>miejsce obrony (opcjonalnie), jeĹźeli nie podano 
    zostanie wpisany Sopot;</dd>
  <dt><code>\keywords</code></dt>
- <dd>lista słów kluczowych (oddzielonych przecinkami);</dd>
+ <dd>lista sĹĂłw kluczowych (oddzielonych przecinkami);</dd>
  <dt><code>abstract</code></dt> 
- <dd>streszczenie (środowisko);</dd>
+ <dd>streszczenie (Ĺrodowisko);</dd>
  <dt><code>\introduction</code></dt> 
- <dd>wstęp;</dd>
+ <dd>wstÄp;</dd>
  <dt><code>\summary</code></dt> 
- <dd>zakończenie;</dd>
+ <dd>zakoĹczenie;</dd>
  <dt><code>\source</code></dt> 
- <dd>źródło, umieszczane pod tabelą i rysunkiem;</dd>
+ <dd>ĹşrĂłdĹo, umieszczane pod tabelÄ iÂ rysunkiem;</dd>
  <dt><code>\nrwersji</code></dt> 
  <dd>etykieta wersji dokumentu.</dd>
 </dl>
@@ -97,68 +83,68 @@ w klasie <code>wimgr</code>:</h4>
 <h4>Uwagi:</h4>
 <p>
  Polecenia <code>\autor</code>, <code>\nralbumu</code> (ewentualnie
- <code>\email</code>) można wstawić wielokrotnie jeżeli praca jest
- dziełem kilku autorów.
+ <code>\email</code>) moĹźna wstawiÄ wielokrotnie jeĹźeli praca jest
+ dzieĹem kilku autorĂłw.
 </p>
 
-<p>Polecenie <code>\oswiadczenie</code> zostało dodane do wersji 1.03
-pakietu a polecenie \UniversityName do wersji 1.04.
+<p>Polecenie <code>\oswiadczenie</code> zostaĹo dodane do wersji 1.03
+pakietu aÂ polecenie \UniversityName do wersji 1.04.
 </p>
 
 <p>
- Klasa wykorzystuje następujące pakiety: <code>graphicx</code>,
+ Klasa wykorzystuje nastÄpujÄce pakiety: <code>graphicx</code>,
  <code>polski</code>, <code>hyperref</code>, <code>url</code>.
 </p>
 <!-- ................. -->
-<h4>Przykładowa struktura pracy:</h4>
+<h4>PrzykĹadowa struktura pracy:</h4>
 <pre>
 %&amp; --translate-file=il2-pl
 \documentclass[skorowidz,palatino,brudnopis]{wimgr}
 \nrwersji {<em>etykieta</em>}
 
-\UniversityName {Nazwa-Szkoły}
+\UniversityName {Nazwa-SzkoĹy}
 
-\author   {<em>imię1 nazwisko1</em>}
+\author   {<em>imiÄ1 nazwisko1</em>}
 \nralbumu {<em>numer1</em>}
 \email    {<em>email1@gnu.univ.gda.pl</em>}
 
-\author   {<em>imię2 nazwisko2</em>}
+\author   {<em>imiÄ2 nazwisko2</em>}
 \nralbumu {<em>numer2</em>}
 
-\title    {<em>tytuł-pracy</em>}
+\title    {<em>tytuĹ-pracy</em>}
 
 \kierunek {<em>nazwa-kierunku</em>}
 \date     {<em>rok-obrony</em>}
 \miejsce  {<em>miejsce</em>}
 
-\opiekun  {<em>tytuł-naukowy imię nazwisko</em>}
+\opiekun  {<em>tytuĹ-naukowy imiÄ nazwisko</em>}
 \begin{document}
 
 \begin{abstract}... \end{abstract}
-\keywords{<em>słowo-kluczowe</em>, <em>słowo-kluczowe</em>, ... }
+\keywords{<em>sĹowo-kluczowe</em>, <em>sĹowo-kluczowe</em>, ... }
 \maketitle
-% --- początek pracy ---
-% Wstęp
+% --- poczÄtek pracy ---
+% WstÄp
 \introduction
 ...
 
-\chapter{<em>tytuł-rozdziału</em>}
+\chapter{<em>tytuĹ-rozdziaĹu</em>}
 ....
     
-\section{<em>tytuł-podrozdziału</em>}
+\section{<em>tytuĹ-podrozdziaĹu</em>}
 ...
-\section{<em>tytuł-podrozdziału</em>}
+\section{<em>tytuĹ-podrozdziaĹu</em>}
 ...
 ...
-% Zakończenie
+% ZakoĹczenie
 \summary
 ...
 
-% Załączniki (opcjonalnie):
+% ZaĹÄczniki (opcjonalnie):
 \appendix
-\chapter{<em>tytuł-załącznika</em>}
+\chapter{<em>tytuĹ-zaĹÄcznika</em>}
 ...
-\chapter{<em>tytuł-załącznika</em>}
+\chapter{<em>tytuĹ-zaĹÄcznika</em>}
 ...
 
 % Literatura:
@@ -166,7 +152,7 @@ pakietu a polecenie \UniversityName do wersji 1.04.
 ...
 \end{thebibliography}
 
-% Spisy tabel i rysunków (jeżeli są potrzebne):
+% Spisy tabel i rysunkĂłw (jeĹźeli sÄ potrzebne):
 \listoftables
 \listoffigures
 
@@ -178,21 +164,8 @@ pakietu a polecenie \UniversityName do wersji 1.04.
 
 <h4>Zmiany:</h4>
 <dl>
-<dt>Wersja 1.04 (6/2007)</dt>
+
 <dd>Dodanie polecenia <code>\UniversityName</code>.</dd>
 <dt>Wersja 1.03 (6/2005)</dt>
 <dd>Dodanie polecenia <code>\oswiadczenie</code>.</dd>
 </dl>
-
-</body>
-</html>
-<!--
-Local variables:
- mode: nxml
- time-stamp-start:"name='DC.date' content='"
- time-stamp-end:"'/>"
- time-stamp-line-limit:0
- LocalWords: Przechlewski
- ispell-local-dictionary: "polish"
-End:
--->
