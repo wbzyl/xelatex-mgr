@@ -1,39 +1,24 @@
-%& --translate-file=il2-pl
+% Plik jest przykładem wykorzystania klasy xmgr do formatowania 
+% pracy magisterskiej.
 %
-% Plik jest przykładem wykorzystania klasy wimgr do formatowania 
-% pracy magisterskiej przygotowanej na Wydziale Zarządzania 
-% Uniwersytetu Gdańskiego.  
-%
-% Szkielet struktury tego dokumentu można wykorzystywać formatując 
+% Szablon tego dokumentu można wykorzystywać formatując 
 % własną pracę. Treść dokumentu nie ma specjalnie sensu i raczej
 % nie nadaje się jako większy czy mniejszy fragment własnej pracy.
 %
-% (c) T. Przechlewski (tomasz@gnu.univ.gda.pl) 2002--2005.
-%
-% Rozpowszechnianie tego pliku jest dozwolone na zasadach 
-% licencji GNU (http://www.gnu.org).
-%
-% $Id: wimgr.tex,v 1.2 2005/06/18 21:25:27 tomek Exp $
-%
-% Deklaracja klasy pracamgr, dostepne opcje:
+% Dostepne opcje:
 %  * magisterska -- praca magisterska (wartość domyślna)
 %  * licencjacka -- praca licencjacka
 %  * skorowidz   -- tworzenie skorowidza
-%  * palatino    -- skład krojem Palatino (domyślnie Computer Modern)
 %  * xodstep     -- podwójny odstęp między wierszami
 %  * brudnopis   -- zalecany na etapie  tworzenia pracy
 %
-\documentclass[skorowidz,palatino,brudnopis,xodstep]{wimgr}
-%\documentclass[skorowidz,brudnopis,xodstep]{wimgr}
+\documentclass[skorowidz,brudnopis,xodstep]{xmgr}
+%\documentclass[skorowidz,brudnopis,xodstep]{xmgr}
 
 % Opcjonalnie identyfikator dokumentu (drukowany tylko 
 % z włączoną opcją `brudnopis'):
 \nrwersji {0.1}
-
-% Jeżeli Twój TeX psuje polskie znaki, uaktywnij poniższą deklarację:
-%\usepackage[latin2]{inputenc}
-
-%%%
+%
 % Przykładowe wykorzystanie pakietu fancyhdr do zdefiniowania
 % tzw. żywej paginy (por. np. http://www.maths.soton.ac.uk/~ap/latex/fancyhdr.html)
 %\usepackage{fancyhdr}
@@ -52,9 +37,9 @@
 %\renewcommand{\footrulewidth}{0.0pt}
 %%
 
-%% Jeżeli nie podano szkoły zostanie wpisane na stronie tytułowej:
-%%     `Uniwersytet Gdański -- Wydział Zarządzania'
-%%\UniversityName{Wyższa Szkoła Zarządzania w Kwidzynie}
+% Jeżeli nie podano szkoły zostanie wpisane na stronie tytułowej:
+%     Uniwersytet Gdański -- Instytut Informatyki
+%\UniversityName{Wyższa Szkoła Gdzieśtam}
 
 %
 % Dane autora(ów):
@@ -72,9 +57,9 @@
 \kierunek {Informatyka}
 
 % Rok obrony:
-\date     {2007}
+\date     {2100}
 
-% Jeżeli nie podano miejsca zostanie wpisany `Sopot'
+% Jeżeli nie podano miejsca zostanie wpisany `Gdańsk'
 \miejsce {Gdańsk}
 
 % Tytuł naukowy, imię i nazwisko promotora, np.:
@@ -82,7 +67,6 @@
 %  prof. dr hab.~Jan Kowalski 
 % itp...
 \opiekun  {prof. dr hab.~Jan Nowak}
-
 %
 % Miejsce na deklaracje własnych poleceń:
 \newcommand{\filename}[1]{\texttt{#1}}
@@ -647,13 +631,8 @@ Dokument dostępny także w~\url{http://www.docbook.org/}.
 
 %
 % Skorowidz (opcjonalnie)
-\printindex
+%\printindex
 
 \oswiadczenie
 
 \end{document}
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-master: t
-%%% coding: latin-2
-%%% End: 
