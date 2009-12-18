@@ -33,7 +33,7 @@ i oznaczanie każdej strony numerem wersji oraz datą;</dd>
 
 ## Dodatkowe polecenia i środowiska
 
-Dodatkowe polecenia umożliwiają wstawienie swoje nazwiska,
+Dodatkowe polecenia umożliwiają wstawienie swojego nazwiska,
 tytułu pracy itd.
 
 <dl>
