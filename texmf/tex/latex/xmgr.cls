@@ -1,65 +1,25 @@
-% Klasa dokument\'ow do sk{\l}adu prac magisterskich
-% w Instytucie Informatyki Uniwersytetu Gda\'nskiego.
-%
-% This work may be distributed under the terms of the LaTeX Project
-% Public License, as described in lppl.txt in the base LaTeX
-% distribution.  Either version 1.0 or, at your option, any later version.
-%
-% Klasa xmgr mo\.ze by\'c rozpowszechniana na zasadach publicznej
-% licencji LaTeX Project (The LaTeX project public license, LPPL,
-% por. http://www.latex-project.org/lppl/)
-% Istota LPPL sprowadza si\k{e} do tego, \.ze modyfikacje pliku dozwolone
-% s\k{a} wylacznie pod warunkiem zmiany jego nazwy.
-%
-% Copyright (c) T. Przechlewski (tomasz@gnu.univ.gda.pl), 2002--2004, 2005
-% Copyright (c) W. Bzyl (matwb@ug.edu.pl), 2009
-%
-% Poprawki:
-% --------
-% wersja: 2.0.0:
-%   12/12/2009: Adaptacja do XeLaTeX-a
-% wersja: 1.04:
-%   07/06/2007: Dodano polecenie \UniversityName
-% wersja: 1.03:
-%   18/06/2005: Usuni\k{e}to kilka istotnych b\l{}\k{e}d\'ow zg\loszonych przez Piotra Tylskiego,
-%            w tym: brak wpis\'ow `Bibliografia' i O\'swiadczenie w spisie tre\'sci
-% wersja: 1.02:
-%   07/4/2005: Dodane polecenie \oswiadczenie wstawiaj\k{a}ce tekst deklaracji okre\'slonej
-%            w pi\'smie ok\'olnym Rektora UG nr 4/R/04 (z dnia 13.12.2004)
-% wersja: 1.01:
-%   23/4/2004: Poprawiony b\l\k{a}d w s\lowie \'Zr\'o\lo
-%   18/5/2005: Zmiana sposobu formatowania strony tytu\lowej, dodanie numeru wersji
-%            klasy wimgr do paginy w trybie `brudopis' + poprawka (wersja 1.01)
-
-\def\ThisClassVersionId{v2.0.0}
-%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xmgr}[2007/10/15 \ThisClassVersionId, Praca magisterska]
+\ProvidesClass{xxmgr}[2007/10/15 v2.0.0 Praca magisterska]
 
 \def\@baseclass{report}
 \def\@rodzajpracy{magisterska}
 \def\@BInterlinia{\relax}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{\@baseclass}}
-\PassOptionsToClass{a4paper,twoside,openany,11pt}{\@baseclass}
-%
-\DeclareOption{licencjacka}{\def\@rodzajpracy{licencjacka}}
-\DeclareOption{skorowidz}{\input{makeidx.sty}\makeindex}
-%\DeclareOption{palatino}{\input{qpalatin.sty}}
-\DeclareOption{brudnopis}{\AtEndOfClass{\ShowThisDocVersion 
-  \linespread{1.0}}}
+\PassOptionsToClass{a4paper,twoside,openany,12pt}{\@baseclass}
+
 \DeclareOption{xodstep}{\AtEndOfClass{\linespread{1.3}}}
 \ProcessOptions
 %
 \LoadClass{\@baseclass}
 %
-\usepackage{fontspec}
+\RequirePackage{fontspec}
 \defaultfontfeatures{Mapping=tex-text}
-\usepackage{xunicode}
-\usepackage{xltxtra}
-\usepackage{graphicx}
-\usepackage{hyperref}
-\usepackage{url}
-\usepackage[polish]{polyglossia} 
+\RequirePackage{xunicode}
+\RequirePackage{xltxtra}
+\RequirePackage{graphicx}
+\RequirePackage{hyperref}
+\RequirePackage{url}
+\RequirePackage[polish]{polyglossia} 
 %
 \textwidth\paperwidth
 \advance\textwidth -55mm
@@ -88,7 +48,7 @@
   \expandafter\def\csname theauthor\number\authornumber\endcsname
       {\ignorespaces#1\unskip}%
   \expandafter\def\csname theauthorid\number\authornumber
-  \endcsname{???\ClassError{wimgr}{Brak numeru albumu}\@ehc}%
+  \endcsname{???\ClassError{xmgr}{Brak numeru albumu}\@ehc}%
   \expandafter\let\csname thenetaddress\number\authornumber\endcsname\relax }
 %
 \def\nralbumu#1{%
@@ -121,10 +81,56 @@
    \repeat
   }
 
- % <<
 \def\UniversityName#1{\def\Univ@Name{#1}}
-\def\Univ@Name{UNIWERSYTET GDAŃSKI\\Wydział Matematyki, Fizyki i Informatyki\\Instytut Informatyki}
- % <<
+\def\Univ@Name{UNIWERSYTET GDAŃSKI\\
+  Wydział Matematyki, Fizyki i Informatyki\\
+  Instytut Informatyki}
+
+%\def\nralbumu#1{\gdef\@nralbumu{#1}}
+%\def\@nralbumu{???\ClassError{xmgr}{Brak numeru albumu}\@ehc}
+\def\kierunek#1{\gdef\@kierunek{#1}}
+\def\@kierunek{???\ClassError{xmgr}{Nie podano kierunku studiow}\@ehc}
+\def\opiekun#1{\gdef\@opiekun{#1}}
+\def\@opiekun{???\ClassError{xmgr}{Brak danych opiekuna pracy}\@ehc}
+\def\miejsce#1{\gdef\@miejsce{#1}}
+\def\@miejsce{Gdańsk}
+%
+\def\keywords#1{\gdef\@keywords{#1}}
+\def\@keywords{???\ClassError{xmgr}{Brak slow kluczowych}\@ehc}
+\def\klasyfikacja#1{\gdef\@klasyfikacja{#1}}
+\def\@klasyfikacja{???\ClassError{xmgr}{Brak klasyfikacji tematycznej}\@ehc}
+%
+\newcommand{\introduction}{%\doublepage
+   \chapter*{\IntroName\@mkboth{\IntroName}{\IntroName}}%
+\addcontentsline{toc}{chapter}{\IntroName}}
+%
+\newcommand{\summary}{%\doublepage
+   \chapter*{\SummaryName\@mkboth{\SummaryName}{\SummaryName}}%
+\addcontentsline{toc}{chapter}{\SummaryName}}
+%
+\def\oswiadczenieText{%
+Ja, niżej podpisany(a) oświadczam, iż przedłożona praca 
+dyplomowa została wykonana przeze mnie samodzielnie, 
+nie narusza praw autorskich, interesów prawnych 
+i~materialnych innych osób.\endgraf }
+%
+\long\def\oswiadczenie{%%\newpage 
+\if@twocolumn \onecolumn \fi
+\chapter*{Oświadczenie}%
+\addcontentsline{toc}{chapter}{Oświadczenie}%
+\par 
+\vskip6mm
+\noindent
+\oswiadczenieText
+\par\vskip12mm 
+\centerline{\vbox{%
+\hbox to.8\textwidth{\hbox to45mm{\dotfill}\hss 
+   \hbox to45mm{\dotfill}} 
+\hbox to.8\textwidth{\hbox to45mm{\hss data\hss}\hss
+\hbox to45mm{\hss podpis\hss}}%
+}}\par
+\newpage }
+
 \renewcommand\maketitle{%
   \begin{titlepage}%
     \let\footnotesize\small
@@ -179,28 +185,11 @@
   %\listoffigures
 } %% --renewcommand: maketitle --
 
-%%\def\nralbumu#1{\gdef\@nralbumu{#1}}
-%%\def\@nralbumu{???\ClassError{wimgr}{Brak numeru albumu}\@ehc}
-\def\kierunek#1{\gdef\@kierunek{#1}}
-\def\@kierunek{???\ClassError{xmgr}{Nie podano kierunku studiow}\@ehc}
-\def\opiekun#1{\gdef\@opiekun{#1}}
-\def\@opiekun{???\ClassError{xmgr}{Brak danych opiekuna pracy}\@ehc}
-\def\miejsce#1{\gdef\@miejsce{#1}}
-\def\@miejsce{Gdańsk}
-%
-\def\keywords#1{\gdef\@keywords{#1}}
-\def\@keywords{???\ClassError{xmgr}{Brak slow kluczowych}\@ehc}
-\def\klasyfikacja#1{\gdef\@klasyfikacja{#1}}
-\def\@klasyfikacja{???\ClassError{xmgr}{Brak klasyfikacji tematycznej}\@ehc}
-%
-\newbox \abspagebox %% *tp **
-\def\InsertAbstractHere{\unvbox \abspagebox}
-%
 \renewenvironment{abstract}{\global 
   \setbox \abspagebox \vbox \bgroup 
   \section*{Streszczenie}  }
  {\egroup}
-%
+
 \renewcommand*\@seccntformat[1]{\csname the#1\endcsname.\enspace}
 \def\numberline#1{\hb@xt@\@tempdima{#1.\hfil}}
 \renewcommand*\l@chapter[2]{%
@@ -257,64 +246,14 @@
     {-3.25ex\@plus -1ex \@minus -.2ex}%
     {1.5ex \@plus .2ex}%
     {\reset@font\normalsize\bfseries\raggedright}}
-\renewcommand{\paragraph}{???\ClassError{wimgr}{Zbyt duzo srodtytulow}\@ehc}%
+\renewcommand{\paragraph}{???\ClassError{xmgr}{Zbyt duzo srodtytulow}\@ehc}%
 %
-% Skorowidz: dodanie kresek w pozycjach skorowidza stopnia drugiego
-\renewenvironment{theindex}{%
-   \clearpage \refstepcounter{chapter}% potrzebne do prawid{\l}owego
-     % dzia{\l}ania zak{\l}adek w dokumencie PDF
-   \columnseprule \z@ \columnsep 35\p@
-   \twocolumn[\@makeschapterhead{\indexname}]%
-   \@mkboth{\indexname}{\indexname}%
-   \addcontentsline{toc}{chapter}{\indexname}% 
-   \thispagestyle{plain}\parindent\z@
-   \parskip\z@ \@plus .3\p@\relax
-   \let\item\@idxitem }
-   {\clearpage }
-\def\indexemdashes{%
-\def\@idxitem{\par\hangindent 0pt}
-\def\subitem{\par\hangindent 0pt --- }
-\def\subsubitem{\par\hangindent 0pt --- --- }
-\def\indexspace{\par \vskip 10pt plus 5pt minus 3pt\relax}}
-\indexemdashes
-%
-% Wprowadzenie/zako\'nczenie
-\newcommand{\introduction}{%\doublepage
-   \chapter*{\IntroName\@mkboth{\IntroName}{\IntroName}}%
-\addcontentsline{toc}{chapter}{\IntroName}}
-%
-\newcommand{\summary}{%\doublepage
-   \chapter*{\SummaryName\@mkboth{\SummaryName}{\SummaryName}}%
-\addcontentsline{toc}{chapter}{\SummaryName}}
-% O\'swiadczenie (dodane 7.4.2005)
-\def\oswiadczenieText{%
-Ja, niżej podpisany(a) oświadczam, iż przedłożona praca 
-dyplomowa została wykonana przeze mnie samodzielnie, 
-nie narusza praw autorskich, interesów prawnych 
-i~materialnych innych osób.\endgraf }
-%
-\long\def\oswiadczenie{%%\newpage 
-\if@twocolumn \onecolumn \fi
-%%\centerline{\large\textbf{O\'swiadczenie}}
-%%\vspace*{50mm}
-\chapter*{O\'swiadczenie}%
-\addcontentsline{toc}{chapter}{Oświadczenie}%
-\par 
-\vskip6mm
-\noindent
-\oswiadczenieText
-\par\vskip12mm 
-\centerline{\vbox{%
-\hbox to.8\textwidth{\hbox to45mm{\dotfill}\hss 
-   \hbox to45mm{\dotfill}} 
-\hbox to.8\textwidth{\hbox to45mm{\hss data\hss}\hss
-\hbox to45mm{\hss podpis\hss}}%
-}}\par
-\newpage }
-%
-% Polecenia listoffigures/listoftables uproszczono oraz 
-% dodano \addcontentsline, tak aby tytu{\l} spisu pojawi{\l} 
-% si\k{e} w spisie tre\'sci i zak\ladkach w pliku PDF:
+\newbox \abspagebox %% *tp **
+\def\InsertAbstractHere{\unvbox \abspagebox}
+
+% Uproszczono polecenia listoffigures/listoftables oraz 
+% dodano \addcontentsline, tak aby tytuł spisu pojawił
+% się w spisie treści i zakładkach w pliku PDF:
 \renewcommand\listoffigures{%
     \chapter*{\listfigurename
       \@mkboth{\MakeUppercase\listfigurename}%
@@ -349,10 +288,10 @@ i~materialnych innych osób.\endgraf }
      {\def\@noitemerr
        {\@latex@warning{Empty `thebibliography' environment}}%
       \endlist}
-
+%
 % Uproszczono polecenie \@makecaption, tak \.ze podpisy s\k{a}
-% teraz sk{\l}adane od lewego marginesu. 
-% Dodano polecenie \source do sk{\l}adania \'xr\'od{\l}a
+% teraz składane od lewego marginesu. 
+% Dodano polecenie \source do składania źródła
 \long\def\@makecaption#1#2{\par
   \vskip\abovecaptionskip
   \begin{flushleft}\small\textbf{#1}. #2\end{flushleft}
@@ -361,46 +300,7 @@ i~materialnych innych osób.\endgraf }
   \par
 }
 \def\source#1{\par \begin{flushleft}\small 
-\SourceName:~#1\end{flushleft}}
-%
-% Oznakowanie wersji dokumentu na ka\.zdej stronie w postaci
-% adresu e-mail pierwszego autora (je\.zeli jest zdefiniowany) lub imienia
-% i nazwiska pierwszego autora + tego co autor wpisa{\l} jako
-% argument polecenia \nrwersji + bie{\.z}\k{a}ca data.
-\def\nrwersji#1{\def\ThisDocVersion{#1}}\nrwersji{????}%
-\def\shorttoday{\number\day/\number\month/\number\year~r.}
-%
-\newbox\show@ship@box
-\newdimen\Page@hs\Page@hs=210mm
-\newdimen\Page@vs\Page@vs=297mm
-%
-\def\ThisDocVersionId{%
-  \expandafter \ifx \csname thenetaddress1\endcsname \undefined   
-    \csname theauthor1\endcsname \else
-    \csname thenetaddress1\endcsname \fi
-  \space --\space wersja \ThisDocVersion\space z\space \shorttoday }
-%
-\def\ShowThisDocVersion{%
-\let\oriship\shipout
-\def\DOSHIP{%
-  \hoffset-1in \voffset-1in
-  \oriship\vbox to\Page@vs{
-  \kern15mm
-  \hbox to\Page@hs{\kern30mm \ttversionfont XMGR: 
-          \ThisClassVersionId\space::
-          \ThisDocVersionId \hss}
-  \nointerlineskip
-  \nointerlineskip\vss
-  \hbox to\Page@hs{\hss\box\show@ship@box\hss}%
-  \nointerlineskip\vss
-  %\hbox to\Page@hs{\kern30mm \ttversionfont \ThisDocVersionId \hss}
-  \kern15mm
-}}
-% 
-\font\ttversionfont=pltt8 
-\def\doship{\aftergroup\DOSHIP}
-\def\shipout{\afterassignment\doship\setbox\show@ship@box}
-}
+ \SourceName:~#1\end{flushleft}}
 %
 \def\IntroName{Wprowadzenie}
 \def\SummaryName{Zakończenie}

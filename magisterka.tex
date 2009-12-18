@@ -1,79 +1,23 @@
-% Plik jest przykładem wykorzystania klasy xmgr do formatowania 
-% pracy magisterskiej.
-%
-% Szablon tego dokumentu można wykorzystywać formatując 
-% własną pracę. Treść dokumentu nie ma specjalnie sensu i raczej
-% nie nadaje się jako większy czy mniejszy fragment własnej pracy.
-%
-% Dostepne opcje:
-%  * magisterska -- praca magisterska (wartość domyślna)
-%  * licencjacka -- praca licencjacka
-%  * skorowidz   -- tworzenie skorowidza
-%  * xodstep     -- podwójny odstęp między wierszami
-%  * brudnopis   -- zalecany na etapie  tworzenia pracy
-%
-\documentclass[skorowidz,brudnopis,xodstep]{xmgr}
-%\documentclass[skorowidz,brudnopis,xodstep]{xmgr}
+\documentclass[brudnopis,xodstep]{xmgr}
 
-% Opcjonalnie identyfikator dokumentu (drukowany tylko 
-% z włączoną opcją `brudnopis'):
-\nrwersji {0.1}
-%
-% Przykładowe wykorzystanie pakietu fancyhdr do zdefiniowania
-% tzw. żywej paginy (por. np. http://www.maths.soton.ac.uk/~ap/latex/fancyhdr.html)
-%\usepackage{fancyhdr}
-%\pagestyle{fancy}
-%\fancyhf{}
-%% 'Klasycznie', tj. wszystko w paginie górnej:
-%\fancyhead[LE,RO]{\textbf{\thepage}}
-%\fancyhead[LO]{\small\sffamily \nouppercase{\rightmark}}
-%\fancyhead[RE]{\small\sffamily \nouppercase{\leftmark}}
-%%
-%\fancyfoot[LE,RO]{\textbf{\thepage}}
-%\fancyhead[LE]{\small\sffamily \nouppercase{\leftmark}}
-%\fancyhead[RO]{\small\sffamily \nouppercase{\rightmark}}
-%%
-%\renewcommand{\headrulewidth}{0.4pt}
-%\renewcommand{\footrulewidth}{0.0pt}
-%%
-
-% Jeżeli nie podano szkoły zostanie wpisane na stronie tytułowej:
-%     Uniwersytet Gdański -- Instytut Informatyki
-%\UniversityName{Wyższa Szkoła Gdzieśtam}
-
-%
-% Dane autora(ów):
 \author   {Walenty Szczęsny}
-\nralbumu {rr000000001}
+\nralbumu {100\,001}
 \email    {walenty@szczesny.com.pl}
 
 \author   {Monika A.~Szczęsna-Woś}
-\nralbumu {rr000000002}
+\nralbumu {100\,002}
 
-% Tytuł pracy:
 \title    {Dokumenty strukturalne: teoria i~zastosowania}
-
-% Kierunek, tj. katedra/instytut promotora:
 \kierunek {Informatyka}
-
-% Rok obrony:
 \date     {2100}
-
-% Jeżeli nie podano miejsca zostanie wpisany `Gdańsk'
 \miejsce {Gdańsk}
 
-% Tytuł naukowy, imię i nazwisko promotora, np.:
-%  dr Jan Kowalski
-%  prof. dr hab.~Jan Kowalski 
-% itp...
 \opiekun  {prof. dr hab.~Jan Nowak}
-%
-% Miejsce na deklaracje własnych poleceń:
+
 \newcommand{\filename}[1]{\texttt{#1}}
 
 \begin{document}
 
-% Streszczenie/Słowa kluczowe:
 \begin{abstract}
   Aczkolwiek w~ciągu ostatnich lat skład tekstu wspomagany komputerowo
   całkowicie wyeliminował stosowanie tradycyjnych technik drukarskich,
@@ -127,7 +71,7 @@ podstawowych zalet takiego podejścia należy:
 \begin{itemize}
 \item
 jest to międzynarodowy
-standard dostępny na wielu platformach sprzętowo{\dywiz}systemowych;
+standard dostępny na wielu platformach sprzętowo\=systemowych;
 \item
 jest to
 język opisu \emph{każdego\/} dokumentu, o~praktycznie nieograniczonych
@@ -188,7 +132,7 @@ SGML/XML.
 
 \begin{figure}[!tbh]
 \centering 
-\includegraphics[width=.8\hsize]{schemat}
+\includegraphics[width=.8\hsize]{fig/schemat}
 \caption{Schemat archiwum\label{RYS.2}}
 \source{Opracowanie własne}
 \end{figure}
@@ -431,17 +375,6 @@ Nazwa & Autor      & Adres URL \\ \hline
 \caption{Publicznie dostępne procesory XLST\label{zest:proces:xslt}}
 \source{Opracowanie własne}
 \end{table}
-
-Wykorzystując szablony, na podstawie dokumentu XML otrzymujemy
-bezpośrednio dokument HTML. W~przypadku wersji drukowanych sprawa jest
-bardziej skomplikowana (por.~rys.~\ref{fig:xsl-fo}).
-
-\begin{figure}[!tbh]
-\centering 
-\includegraphics[width=.8\hsize]{fo-structure}
-\caption{Ogólna struktura dokumenu XSL-FO\label{fig:xsl-fo}}
-\source {Opracowanie własne}
-\end{figure}
 
 XSL:FO jest skomplikowanym językiem o~dużych możliwościach,
 zawierającym ponad 50 różnych ,,obiektów formatujących'', począwszy od
