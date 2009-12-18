@@ -1,45 +1,40 @@
-% Klasa dokument\'ow do sk{\l}adu prac magisterskich/licencjackich
-% na wydziale Zarz\k{a}dzania Uniwersytetu Gda\'nskiego ( wersja 1.03)
-%
-% Copyright (c) 2001-2004, 2005 by Wydzial Zarzadzania UG, http://www.wzr.pl
+% Klasa dokument\'ow do sk{\l}adu prac magisterskich
+% w Instytucie Informatyki Uniwersytetu Gda\'nskiego.
 %
 % This work may be distributed under the terms of the LaTeX Project
 % Public License, as described in lppl.txt in the base LaTeX
 % distribution.  Either version 1.0 or, at your option, any later version.
 %
-% Klasa wimgr mo\.ze by\'c rozpowszechniana na zasadach publicznej
+% Klasa xmgr mo\.ze by\'c rozpowszechniana na zasadach publicznej
 % licencji LaTeX Project (The LaTeX project public license, LPPL,
 % por. http://www.latex-project.org/lppl/)
 % Istota LPPL sprowadza si\k{e} do tego, \.ze modyfikacje pliku dozwolone
 % s\k{a} wylacznie pod warunkiem zmiany jego nazwy.
 %
 % Copyright (c) T. Przechlewski (tomasz@gnu.univ.gda.pl), 2002--2004, 2005
+% Copyright (c) W. Bzyl (matwb@ug.edu.pl), 2009
 %
 % Poprawki:
 % --------
+% wersja: 2.0.0:
+%   12/12/2009: Adaptacja do XeLaTeX-a
 % wersja: 1.04:
-% 07/06/2007: Dodano polecenie \UniversityName
+%   07/06/2007: Dodano polecenie \UniversityName
 % wersja: 1.03:
-% 18/06/2005: Usuni\k{e}to kilka istotnych b\l{}\k{e}d\'ow zg\loszonych przez Piotra Tylskiego,
+%   18/06/2005: Usuni\k{e}to kilka istotnych b\l{}\k{e}d\'ow zg\loszonych przez Piotra Tylskiego,
 %            w tym: brak wpis\'ow `Bibliografia' i O\'swiadczenie w spisie tre\'sci
 % wersja: 1.02:
-% 07/4/2005: Dodane polecenie \oswiadczenie wstawiaj\k{a}ce tekst deklaracji okre\'slonej
+%   07/4/2005: Dodane polecenie \oswiadczenie wstawiaj\k{a}ce tekst deklaracji okre\'slonej
 %            w pi\'smie ok\'olnym Rektora UG nr 4/R/04 (z dnia 13.12.2004)
 % wersja: 1.01:
-% 23/4/2004: Poprawiony b\l\k{a}d w s\lowie \'Zr\'o\lo
-% 18/5/2005: Zmiana sposobu formatowania strony tytu\lowej, dodanie numeru wersji
+%   23/4/2004: Poprawiony b\l\k{a}d w s\lowie \'Zr\'o\lo
+%   18/5/2005: Zmiana sposobu formatowania strony tytu\lowej, dodanie numeru wersji
 %            klasy wimgr do paginy w trybie `brudopis' + poprawka (wersja 1.01)
-%
-% Dzi\k{e}kuj\k{e} Marcinowi Woli\'nskiemu za zgod\k{e} na wykorzystanie 
-% fragment\'ow jego klasy opracowanej w tym samym celu co niniejsza
-% dla Wydzia\{l}u Matematyki, Informatyki i Mechaniki, UW.
-%
-% [$Date: 2005/06/18 21:25:27 $]
 
-\def\ThisClassVersionId{v1.01}
+\def\ThisClassVersionId{v2.0.0}
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{wimgr}[2007/10/15 \ThisClassVersionId, Praca magisterska/licencjacka]
+\ProvidesClass{xmgr}[2007/10/15 \ThisClassVersionId, Praca magisterska]
 
 \def\@baseclass{report}
 \def\@rodzajpracy{magisterska}
@@ -49,7 +44,7 @@
 %
 \DeclareOption{licencjacka}{\def\@rodzajpracy{licencjacka}}
 \DeclareOption{skorowidz}{\input{makeidx.sty}\makeindex}
-\DeclareOption{palatino}{\input{qpalatin.sty}}
+%\DeclareOption{palatino}{\input{qpalatin.sty}}
 \DeclareOption{brudnopis}{\AtEndOfClass{\ShowThisDocVersion 
   \linespread{1.0}}}
 \DeclareOption{xodstep}{\AtEndOfClass{\linespread{1.3}}}
@@ -57,9 +52,14 @@
 %
 \LoadClass{\@baseclass}
 %
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text}
+\usepackage{xunicode}
+\usepackage{xltxtra}
 \usepackage{graphicx}
-\usepackage{polski}
 \usepackage{hyperref}
+\usepackage{url}
+\usepackage[polish]{polyglossia} 
 %
 \textwidth\paperwidth
 \advance\textwidth -55mm
@@ -123,7 +123,7 @@
 
  % <<
 \def\UniversityName#1{\def\Univ@Name{#1}}
-\def\Univ@Name{UNIWERSYTET GDA\'NSKI\\Wydzia\l{} Matematyki, Fizyki i Informatyki\\Instytut Informatyki}
+\def\Univ@Name{UNIWERSYTET GDAŃSKI\\Wydział Matematyki, Fizyki i Informatyki\\Instytut Informatyki}
  % <<
 \renewcommand\maketitle{%
   \begin{titlepage}%
@@ -171,7 +171,7 @@
   \clearpage 
   \thispagestyle{empty}
   \InsertAbstractHere
-  \section*{S{\l}owa kluczowe}
+  \section*{Słowa kluczowe}
   \@keywords
   \clearpage
   \tableofcontents
@@ -182,17 +182,16 @@
 %%\def\nralbumu#1{\gdef\@nralbumu{#1}}
 %%\def\@nralbumu{???\ClassError{wimgr}{Brak numeru albumu}\@ehc}
 \def\kierunek#1{\gdef\@kierunek{#1}}
-\def\@kierunek{???\ClassError{wimgr}{Nie podano kierunku studiow}\@ehc}
+\def\@kierunek{???\ClassError{xmgr}{Nie podano kierunku studiow}\@ehc}
 \def\opiekun#1{\gdef\@opiekun{#1}}
-\def\@opiekun{???\ClassError{wimgr}{Brak danych opiekuna pracy}\@ehc}
+\def\@opiekun{???\ClassError{xmgr}{Brak danych opiekuna pracy}\@ehc}
 \def\miejsce#1{\gdef\@miejsce{#1}}
-\def\@miejsce{Sopot}
+\def\@miejsce{Gdańsk}
 %
 \def\keywords#1{\gdef\@keywords{#1}}
-\def\@keywords{???\ClassError{wimgr}{Brak slow kluczowych}\@ehc}
+\def\@keywords{???\ClassError{xmgr}{Brak slow kluczowych}\@ehc}
 \def\klasyfikacja#1{\gdef\@klasyfikacja{#1}}
-\def\@klasyfikacja{???\ClassError{wimgr}{Brak klasyfikacji
-    tematycznej}\@ehc}
+\def\@klasyfikacja{???\ClassError{xmgr}{Brak klasyfikacji tematycznej}\@ehc}
 %
 \newbox \abspagebox %% *tp **
 \def\InsertAbstractHere{\unvbox \abspagebox}
@@ -289,17 +288,17 @@
 \addcontentsline{toc}{chapter}{\SummaryName}}
 % O\'swiadczenie (dodane 7.4.2005)
 \def\oswiadczenieText{%
-Ja, ni\.zej podpisany(a) o\'swiadczam, i\.z przed{\l}o\.zona praca 
-dyplomowa zosta{\l}a wykonana przeze mnie samodzielnie, 
-nie narusza praw autorskich, interes\'ow prawnych 
-i~materialnych innych os\'ob.\endgraf }
+Ja, niżej podpisany(a) oświadczam, iż przedłożona praca 
+dyplomowa została wykonana przeze mnie samodzielnie, 
+nie narusza praw autorskich, interesów prawnych 
+i~materialnych innych osób.\endgraf }
 %
 \long\def\oswiadczenie{%%\newpage 
 \if@twocolumn \onecolumn \fi
 %%\centerline{\large\textbf{O\'swiadczenie}}
 %%\vspace*{50mm}
 \chapter*{O\'swiadczenie}%
-\addcontentsline{toc}{chapter}{O\'swiadczenie}%
+\addcontentsline{toc}{chapter}{Oświadczenie}%
 \par 
 \vskip6mm
 \noindent
@@ -387,7 +386,7 @@ i~materialnych innych os\'ob.\endgraf }
   \hoffset-1in \voffset-1in
   \oriship\vbox to\Page@vs{
   \kern15mm
-  \hbox to\Page@hs{\kern30mm \ttversionfont Wimgr: 
+  \hbox to\Page@hs{\kern30mm \ttversionfont XMGR: 
           \ThisClassVersionId\space::
           \ThisDocVersionId \hss}
   \nointerlineskip
@@ -404,7 +403,7 @@ i~materialnych innych os\'ob.\endgraf }
 }
 %
 \def\IntroName{Wprowadzenie}
-\def\SummaryName{Zako\'nczenie}
-\def\SourceName{\'Zr\'od{\l}o}
+\def\SummaryName{Zakończenie}
+\def\SourceName{Źródło}
 %
 \endinput

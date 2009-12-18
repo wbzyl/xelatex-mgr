@@ -91,12 +91,14 @@ Polecenia `\autor`, `\nralbumu` (ewentualnie
 `\email`) można wstawić wielokrotnie jeżeli praca jest
 dziełem kilku autorów.
 
-Klasa wykorzystuje następujące pakiety: `graphicx`,
-`polyglossia`, `hyperref`, `url`.
+Klasa wykorzystuje następujące pakiety: *graphicx*, *hyperref*, *url*,
+*polyglossia*, *fontspec*, *xunicode*, *xltxtra*.
 
 ## Przykład szablonu pracy
 
-<pre>
+<pre>% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8
+
 \documentclass[skorowidz,brudnopis]{xmgr}
 \nrwersji {<em>etykieta</em>}
 
