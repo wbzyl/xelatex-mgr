@@ -31,7 +31,10 @@ i oznaczanie każdej strony numerem wersji oraz datą;</dd>
 <dd>zwiększenie odstępu między wierszami.</dd>
 </dl>
 
-### Dodatkowe polecenia i środowiska
+## Dodatkowe polecenia i środowiska
+
+Dodatkowe polecenia umożliwiają wstawienie swoje nazwiska,
+tytułu pracy itd.
 
 <dl>
 <dt><code>\UniversityName</code></dt>
@@ -91,7 +94,7 @@ dziełem kilku autorów.
 Klasa wykorzystuje następujące pakiety: `graphicx`,
 `polyglossia`, `hyperref`, `url`.
 
-## Przykład szablon pracy
+## Przykład szablonu pracy
 
 <pre>
 \documentclass[skorowidz,brudnopis]{xmgr}
