@@ -1,0 +1,77 @@
+#!/bin/sh
+# Tomasz Przechlewski 
+# Processing PS file for booklet printing
+# 1999 November. // Improvements: 25/12/99
+#  
+
+usage="USAGE:  a5ps [additional_parameters] file_name
+Additional parameters can have the following form:
+  -h -help --help    -- prints this text 
+  -booklet --booklet -- prints booklet with pages rearranged (default)
+  -byside --byside   -- prints consecutive pages side-by-side
+  -s                 -- scaling factor (default .8) 
+  -b                 -- bottom margin (in centimeters, default 0,0cms)
+  -l                 -- left margin (ditto, default 21,0cms)
+  -o                 -- 2nd page offset (ditto, default 13,9cms)"
+
+if test $# -eq 0; then
+  echo "`basename $0`: Missing argument(s)." >&2
+  echo "$usage"
+  exit 0
+fi
+
+Scale='.8'; LM='21'; OM='13.9'; BM='0';
+
+Layout='Booklet'
+
+while test $# -gt 0; do
+  case "$1" in
+    -help|--help) echo "$usage"; exit 0;;
+    -booklet|--booklet) Layout="Booklet";;
+    -byside|--byside) Layout="Byside";;
+    # -- ligatures: --
+    -b)  shift; BM="$1";;
+    -b*) BM="`echo :$1 | sed 's/^:-b//'`";;
+    -l)  shift; LM="$1";;
+    -l*) LM="`echo :$1 | sed 's/^:-l//'`";;
+    -o)  shift; OM="$1";;
+    -o*) OM="`echo :$1 | sed 's/^:-o//'`";;
+    -s)  shift; Scale="$1";;
+    -s*) Scale="`echo :$1 | sed 's/^:-s//'`";;
+    -h)  echo usage; exit;;
+    -h*) echo usage; exit;;
+    *)   PSFile="$1";;
+  esac
+  shift
+done
+
+PSFile=`basename $PSFile .ps`
+
+if [ "$Layout" = "Booklet" ]; then
+
+echo "> Printing a booklet in A5 format on HP6P printer [output goes to the upper tray]
+> Print $PSFile-1-ps.ps, change order of the sheets, don't turn them. Print $PSFile-2-ps.ps
+>> Left margin [-l]:        $LM cm
+>> Bottom margin [-b]:      $BM cm 
+>> Second page margin [-o]: $OM cm 
+>> Scaling[-s]:             $Scale"
+
+# 
+#echo pstops '4:-3L@'$Scale'('$LM'cm',$BM'cm)+0L@'$Scale'('$LM'cm,'$OM'cm)' 
+#echo pstops '4:1L@'$Scale'('$LM'cm',$BM'cm)+-2L@'$Scale'('$LM'cm,'$OM'cm)'
+
+pstops '4:-3L@'$Scale'('$LM'cm',$BM'cm)+0L@'$Scale'('$LM'cm,'$OM'cm)' $PSFile.ps > $PSFile-1-ps.ps
+pstops '4:1L@'$Scale'('$LM'cm',$BM'cm)+-2L@'$Scale'('$LM'cm,'$OM'cm)' $PSFile.ps > $PSFile-2-ps.ps
+
+else
+
+echo "> Printing side-by-side in A5 format on HP6P printer [to $PSFile-1.ps.ps]
+>> Left margin [-l]:        $LM cm
+>> Bottom margin [-b]:      $BM cm 
+>> Second page margin [-o]: $OM cm 
+>> Scaling[-s]:             $Scale"
+
+# 2:0L@.7(21cm,0)+1L@.7(21cm,14.85cm)
+pstops '2:0L@'$Scale'('$LM'cm',$BM'cm)+1L@'$Scale'('$LM'cm,'$OM'cm)' $PSFile.ps > $PSFile-1.ps.ps
+
+fi
