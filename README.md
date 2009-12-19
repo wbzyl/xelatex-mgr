@@ -99,8 +99,13 @@ Klasa wykorzystuje następujące pakiety: *graphicx*, *hyperref*, *url*,
 <pre>% !TEX TS-program = xelatex
 % !TEX encoding = UTF-8
 
-\documentclass[skorowidz,brudnopis]{xmgr}
-\nrwersji {<em>etykieta</em>}
+\documentclass[brudnopis]{xmgr}
+
+\setmainfont[Mapping=tex-text]{Minion Pro:+onum}
+\setsansfont[Mapping=tex-text]{Myriad Pro}
+\setmonofont{Monaco}
+
+%\nrwersji {<em>etykieta</em>} % TODO
 
 \UniversityName {Nazwa-Szkoły}
 
