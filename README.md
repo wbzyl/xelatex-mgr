@@ -1,7 +1,7 @@
 # XMGR (adaptacja wimgr v1.04, 12/2007)
 
 Klasa *xmgr.cls* umożliwia sprawne i wygodne przygotowanie w systemie
-XeLaTeX pracy magisterskiej zgodnie z wymogami obowiązującymi na
+**XeLaTeX** pracy magisterskiej zgodnie z wymogami obowiązującymi na
 kierunku Informatyka.
 
 Klasa jest adaptacją
