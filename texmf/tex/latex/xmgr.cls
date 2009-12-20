@@ -310,17 +310,17 @@ i~materialnych innych osób.\endgraf }
      {\def\@noitemerr
        {\@latex@warning{Empty `thebibliography' environment}}%
       \endlist}
-% Uproszczono polecenie \@makecaption, tak że podpisy są
+% uproszczono polecenie \@makecaption, tak że podpisy są
 % teraz składane od lewego marginesu. 
 \long\def\@makecaption#1#2{\par
   \vskip\abovecaptionskip
   \begin{flushleft}\small\textbf{#1}. #2\end{flushleft}
-  %\vskip\belowcaptionskip % niepotrzebne bo po caption 
-     %winno by\'c \'xr\'od{\l}o
+  %\vskip\belowcaptionskip 
+  % niepotrzebne bo po caption winno być źródło
   \par
 }
 % Dodano polecenie \source do składania źródła
-\def\source#1{\par \begin{flushleft}\small 
+\def\zrodlo#1{\par \begin{flushleft}\small 
  \SourceName:~#1\end{flushleft}}
 %
 %
