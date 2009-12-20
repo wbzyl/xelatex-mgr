@@ -10,8 +10,8 @@ BIBTEX=bibtex
 
 mgr :
 	$(TEX) $(BOOK)
-#	$(BIBTEX) $(BOOK)
-#	$(TEX) $(BOOK)
+	$(BIBTEX) $(BOOK)
+	$(TEX) $(BOOK)
 	$(TEX) $(BOOK)
 
 clean : 
