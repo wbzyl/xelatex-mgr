@@ -42,6 +42,10 @@ tytułu pracy itd.
 domyślnie <em>Uniwersytet Gdański / Instytut Informatyki</em>
 </dd>
 
+<dt><code>\wersja</code></dt>
+<dd>wersja dokumentu wypisywana w główce strony;
+tylko jeśli wybrano opcję <em>brudnopis</em></dd>
+
 <dt><code>\oswiadczenie</code></dt>
 <dd>tekst oświadczenia o samodzielnym wykonaniu pracy, określony
 w piśmie okólnym Rektora UG z dnia 13 grudnia 2004</dd>
@@ -118,7 +122,6 @@ dziełem kilku autorów.
 \keywords{<em>słowo kluczowe</em>, <em>słowo kluczowe</em>, ... }
 \maketitle
 
-% ----
 \introduction
 
 \chapter{<em>tytuł-rozdziału</em>}
@@ -135,10 +138,9 @@ dziełem kilku autorów.
 
 \chapter{<em>tytuł-załącznika</em>}
 
-% literatura:
-\begin{thebibliography}{99}
-
-\end{thebibliography}
+% literatura (obowiązkowo):
+\bibliographystyle{unsrt}
+\bibliography{xml}
 
 % spisy tabel i rysunków (jeśli występują w pracy):
 \listoftables
