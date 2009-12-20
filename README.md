@@ -22,6 +22,8 @@ Klasa *xmgr* korzysta z następujących pakietów:
 
 ## Opcje klasy
 
+Klasa definiuje dwie opcje:
+
 <dl>
 <dt><code>brudnopis</code></dt>
 <dd>wstępna wersja pracy: drukowanie z pojedynczym odstępem
