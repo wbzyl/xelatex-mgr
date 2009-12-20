@@ -1,9 +1,13 @@
-\documentclass[brudnopis,xodstep]{xmgr}
+\documentclass[brudnopis]{xmgr}
 
 %\defaultfontfeatures{Scale=MatchLowercase}
 \setmainfont[Mapping=tex-text]{Minion Pro:+onum}
 \setsansfont[Mapping=tex-text]{Myriad Pro}
-\setmonofont[Scale=0.75,Colour=880000]{Monaco}
+\setmonofont[Scale=0.75]{Monaco}
+
+% Opcjonalnie identyfikator dokumentu 
+% drukowany tylko z włączoną opcją 'brudnopis':
+\wersja   {wersja wstępna [\ymdtoday]}
 
 \author   {Walenty Szczęsny}
 \nralbumu {100\,001}
@@ -13,12 +17,12 @@
 \nralbumu {100\,002}
 
 \title    {Dokumenty strukturalne: teoria i~zastosowania}
-\kierunek {Informatyka}
 \date     {2100}
-\miejsce {Gdańsk}
+\miejsce  {Gdańsk}
 
-\opiekun  {prof. dr hab.~Jan Nowak}
+\opiekun  {prof. dr hab. D. Htunk}
 
+% dodatkowe polecenia
 \newcommand{\filename}[1]{\texttt{#1}}
 
 \begin{document}
@@ -36,10 +40,10 @@
  dokumenty elektroniczne, 
  dokumenty strukturalne}
 
-% Tytuł/spis treści
+% tytuł i spis treści
 \maketitle
 %
-% Wstęp
+% wstęp
 \introduction
 
 Aczkolwiek w~ciągu ostatnich lat skład tekstu wspomagany
@@ -47,13 +51,6 @@ komputerowo całkowicie wyeliminował stosowanie tradycyjnych technik
 drukarskich, to podobny proces w~przypadku publikacji elektronicznych
 czyli publikacji, które w~ogóle nie wykorzystują papieru, a~nośnikem
 informacji staje się ekran komputera nie jest obserwowany.
-
-\begin{verbatim}
-%\defaultfontfeatures{Scale=MatchLowercase}
-\setmainfont[Mapping=tex-text]{Minion Pro:+onum}
-\setsansfont[Mapping=tex-text]{Myriad Pro}
-\setmonofont[Scale=0.75,Colour=880000]{Monaco}
-\end{verbatim}
 
 Formatowanie wizualne, powstało z~myślą o~przygotowaniu publikacji do
 druku i~dlatego nie może sprostać nowym potrzebom, które stwarza
@@ -73,11 +70,9 @@ wyliczenia itp.  Układ graficzny jak już wspominano może ulegać zmianie
 ale treść i~struktura raczej nie, np. Biblia Gutenberga widziana z~tej
 perspektywy nie zmieniła się wcale.
 
-% Na końcu tytułów, śródtytułów, tytułów rysunków i tabel
-% _nie_ umieszcza się kropki
-\chapter{Wprowadzenie do standardów SGML/XML}
+\chapter{Wprowadzenie do standardów SGML}
 
-SGML~\cite{Goldfarb} jest to \emph{metajęzyk} służący do opisywania
+SGML~\cite{Goldfarb:2002:CFG} jest to \emph{metajęzyk} służący do opisywania
 struktury i~zawartości dokumentów (standard ISO 8879).  Do
 podstawowych zalet takiego podejścia należy: 
 \begin{itemize}
@@ -105,14 +100,14 @@ w~postaci hipertekstu albo tekstowej bazy danych. Pozwala to
 zminimalizować koszty\index{koszty}, cały cykl wydawniczy dokonuje się
 na jednym dokumencie -- pliku SGML-owym, a~nie na wielu.
     
-\section{Elementy składowe systemu SGML/XML}
+\section{Elementy składowe systemu SGML}
 
-Standard SGML/XML to specyfikacja techniczna metajęzyka. Zaś systemem
-SGML/XML nazywamy \emph{zestaw narzędzi i~środków niezbędnych do
+Standard SGML to specyfikacja techniczna metajęzyka. Zaś systemem
+SGML nazywamy \emph{zestaw narzędzi i~środków niezbędnych do
 tworzenia, składowania i~obróbki dokumentów z~wykorzystaniem tego
-standardu}.  Typowy proces produkcji dokumentów w~standardzie SGML/XML
+standardu}.  Typowy proces produkcji dokumentów w~standardzie SGML
 podzielony jest na kilka części. Najważniejszymi elementami tego
-procesu są~\cite[s.~45--47]{maler.devel}:
+procesu są~\cite[s.~45--47]{Eisenberg:2002:SXM}:
     
 \begin{itemize}
 \item Klasyfikacja tworzonych dokumentów w~grupy i~wynikający z~tego
@@ -122,7 +117,7 @@ procesu są~\cite[s.~45--47]{maler.devel}:
     (hierarchii występowania czy możliwości skracania).}
   (por.~punkt~\ref{s:dtd}).
 \item Wybraniu odpowiednich narzędzi do tworzenia i~modyfikowania
-  dokumentów SGML/XML (edytory, konwertery, por.~punkt~\ref{s:edytor},
+  dokumentów SGML (edytory, konwertery, por.~punkt~\ref{s:edytor},
   s.~\pageref{s:edytor})\footnote{Wybrany edytor winien w~maksymalnym
     stopniu ułatwiać proces tworzenie dokumentów strukturalnych,
     różniący się od tego, jaki jest stosowany w~narzędziach biurowych
@@ -140,7 +135,7 @@ Każdy z~wyżej wymienionych problemów stanowi pewne zadanie do
 wykonania, które może być w dużym stopniu lub całkowicie
 zautomatyzowane dzięki zastosowaniu odpowiednich narzędzi, co jest
 jednym z~celów i~korzyści stosowania systemu opartego na standardzie
-SGML/XML.
+SGML.
 
 \begin{figure}[!tbh]
 \centering 
@@ -150,33 +145,33 @@ SGML/XML.
 \end{figure}
 
 \section{Opracowanie typu dokumentu\label{s:dtd}}
-Tworzenie DTD~\cite{maler.devel,maler.ex,db.guide} powinno zacząć się
+Tworzenie DTD~\cite{Eisenberg:2002:SXM,Goldfarb:2002:CFG} powinno zacząć się
 od analizy posiadanych danych oraz potrzeb dotyczących dokumentów
 wynikowych i~informacji. Rezultatem analizy dokumentów jest
 wyspecyfikowanie słownika takich elementów oraz, dla każdego typu
 dokumentu, zależności między tymi elementami. Z~tego powodu stworzenie
 dobrego DTD jest zadaniem niełatwym. Ponadto DTD jest tylko częścią
-systemu SGML/XML; oprócz niego potrzebne są narzędzia do formatowania
+systemu SGML; oprócz niego potrzebne są narzędzia do formatowania
 dokumentów, takie jak arkusze stylów DSSSL czy też XSL/XSLT.
     
 Duże koszty implementacji przemawiają często za rozważeniem
-wykorzystania, czy też adaptacji w~systemie SGML/XML udostępnionych
+wykorzystania, czy też adaptacji w~systemie SGML udostępnionych
 publicznie gotowych DTD. W~omawianym projekcie postąpiono podobnie,
 ewentualne opracowanie własnego typu dokumentu odkładając na później.
 Rozważano wstępnie wykorzystanie trzech publicznie dostępnych typów
 dokumentów: \texttt{etd} zdefiniowanego na potrzeby projektu
 \textit{Electronic Theses and Dissertations} w~Virginia Polytechnic
 Institute and State University, \texttt{TEI} opracowanego w~ramach
-projektu \textit{Text Encoding Iniciative} \cite{tei.intro} oraz
+projektu \textit{Text Encoding Iniciative} oraz
 DocBook opracowany przez konsorcjum firm, głównie sektora IT,
-używających technologii SGML/XML do tworzenia dokumentacji do swoich
-produktów~\cite{db.guide}.
+używających technologii SGML do tworzenia dokumentacji do swoich
+produktów.
     
 \section{DocBook}
 \emph{DocBook DTD}\index{DocBook|(} to typ dokumentu definiujący
 strukturę i~zawartość zbioru znaczników SGML, służących do
 dokumentacji oprogramowania i~różnego rodzaju dokumentacje
-techniczne~\cite[s.~123]{db.guide}. Posiada ona bardzo rozbudowaną
+techniczne~\cite[s.~123]{Elmasri:2002:CMC}. Posiada ona bardzo rozbudowaną
 hierarchię znaczników do budowy struktur książek, dokumentacji
 technicznej itp dokumentów.  DTD dla tego typu dokumentu jest dostępne
 zarówno w~standardzie SGML jak i~XML. Dostępna jest także uproszczona
@@ -206,7 +201,7 @@ dokumentacja do systemu FreeBSD).\index{DocBook|)}
     
 \section{Edytory sterowane składnią\label{s:edytor}}
 
-Pierwszym elementem systemu SGML/XML jest edytor
+Pierwszym elementem systemu SGML jest edytor
 strukturalny\index{edytor!strukturalny}, zwany też edytorem sterowanym
 składnią. W~tradycyjnych edytorach działających według paradygmatu
 WYSIWYG\index{WYSIWYG} autor wprowadzając tekst określa na bieżąco
@@ -233,9 +228,8 @@ przyzwyczaili się użytkownicy edytorów biurowych.
 
 \section{Emacs i~psgml}
 
-Konstatując brak tanich i~funkcjonalnych edytorów do pracy
-z~dokumentami SGML/XML należy wspomnieć o~jedynym dostępnym w~chwili
-obecnej, efektywnym, tanim (darmowy) i~powszechnie dostępnym na wielu
+Jedynym dostępnym w~chwili
+obecnej, efektywnym, tanim (darmowy) i~dostępnym na wielu
 platformach systemowo-sprzętowych środowisku do tworzenia dokumentów
 strukturalnych jakim jest edytor Emacs\index{edytor!Emacs} z~pakietem
 psgml. Środowisko to wspomaga autora poprzez:
@@ -269,7 +263,7 @@ implementujących standard DSSSL/XSL, jest najwłaściwszym
 podejściem. Przemawiają za tym różne argumenty, ale najważniejszym
 z~nich jest to, że mamy tu możliwość stworzenia niezależnego od
 platformy programowej i~narzędziowej zbioru szablonów -- przepisów jak
-przetwarzać dokumenty SGML/XML.
+przetwarzać dokumenty SGML.
     
 \section{Przetwarzanie dokumentów SGML -- standard DSSSL\label{s:dsssl}}
 
@@ -315,16 +309,16 @@ wyróżnić można w~tym standardzie następujące części składowe:
 
 \chapter{Przegląd dostępnych narzędzi\label{PRZEGLAD.NARZEDZI}}
 
-W~celu wykorzystania standardu SGML/XML do przetwarzania dokumentów,
+W~celu wykorzystania standardu SGML do przetwarzania dokumentów,
 niezbędne jest zebranie odpowiedniego zestawu narzędzi. Narzędzi do
-przetwarzania dokumentów SGML/XML jest wiele. Są to zarówno całe
+przetwarzania dokumentów SGML jest wiele. Są to zarówno całe
 systemy zintegrowane, jak i~poszczególne programy, biblioteki czy
 skrypty wspomagające.
     
-\section{Narzędzia do przeglądania dokumentów SGML/XML}
+\section{Narzędzia do przeglądania dokumentów SGML}
 
 Do tej kategorii oprogramowania zaliczamy przeglądarki dokumentów
-SGML/XML oraz serwery sieciowe wspomagające standard SGML/XML, przy
+SGML oraz serwery sieciowe wspomagające standard SGML, przy
 czym rozwiązań wspierających standard XML jest już w~chwili obecnej
 dużo więcej i~są dużo powszechniejsze.
 
@@ -332,7 +326,7 @@ Jeżeli chodzi o~przeglądarki to zarówno Internet Explorer jak
 i~Netscape umożliwiają bezpośrednie wyświetlenie dokumentów XML;
 ponieważ jednak nie wspierają w~całości standardu XML, prowadzi to
 ciągle do wielu problemów\footnote{Z~innych mniej popularnych
-  rozwiązań można wymienić takie aplikacje, jak: HyBrick SGML/XML
+  rozwiązań można wymienić takie aplikacje, jak: HyBrick SGML
   Browser firmy Fujitsu Limited, Panorama Publisher firmy InterLeaf
   Inc, DynaText firmy Inso Corporation czy darmowy QWeb. W~przypadku
   serwerów zwykle dokonują one transformacji ,,w~locie'' żądanych
@@ -340,7 +334,7 @@ ciągle do wielu problemów\footnote{Z~innych mniej popularnych
   dokumenty XML).  Ta kategoria oprogramowania ma, z~punktu widzenia
   projektu, znaczenie drugorzędne.}.
       
-\section{Parsery SGML/XML}
+\section{Parsery SGML}
 Program \texttt{nsgmls} (z~pakietu \texttt{SP} Jamesa Clarka) jest
 doskonałym parserem\index{parser} dokumentów SGML, dostępnym
 publicznie.  Parser \texttt{nsgmls} jest dostępny w~postaci źródłowej
@@ -399,7 +393,7 @@ na temat standardu XSL:FO.
 
 Cały dokument XSL:FO zawarty jest wewnątrz elementu \texttt{fo:root}.
 Element ten zawiera (w~podanej niżej kolejności):
- %
+
 \begin{itemize}
 \item dokładnie jeden element \texttt{fo:layout-master-set} zawierający
   szablony określające wygląd poszczególnych stron oraz sekwencji
@@ -410,8 +404,7 @@ Element ten zawiera (w~podanej niżej kolejności):
  jego sformatowania i~podziału na strony.
 \end{itemize}
 
-%
-% Zakończenie 
+% zakończenie 
 \summary
 Możliwości, jakie stoją przed archiwum prac magisterskich opartych na
 XML-u, są ograniczone jedynie czasem, jaki należy poświęcić na pełną
@@ -422,161 +415,25 @@ informacji, musimy szczególną uwagę przykładać do odpowiedniej
 klasyfikacji i archiwizacji danych. Sądzę, że język XML znacznie to
 upraszcza.
 
-%
-% Załączniki (opcjonalnie):
+% załączniki (opcjonalnie):
 \appendix
 \chapter{Tytuł załącznika jeden}
 
-Treść załącznika jeden. Treść załącznika jeden. Treść załącznika jeden
-Treść załącznika jeden. Treść załącznika jeden.
 Treść załącznika jeden.
 
 \chapter{Tytuł załącznika dwa}
 
-Treść załącznika dwa. Treść załącznika dwa. Treść załącznika dwa
-Treść załącznika dwa. Treść załącznika dwa.
 Treść załącznika dwa.
 
-%
-% Literatura (obowiązkowo):
-\begin{thebibliography}{99}
-% Pozycja bibliograficzna typu: książka.
-% autor/autorzy: tytuł, wydawca, rok-wydania
-\bibitem{tei.intro}
-Burnard L.,
-Sperberg-McQueen C. M.:
-\textit{TEI Lite: An Introduction to Text Encoding for Interchange},
-1995.
-\url{http://www.uic.edu/orgs/tei/intros/teiu5.html}.
+% literatura (obowiązkowo):
+\bibliographystyle{unsrt}
+\bibliography{xml}
 
-% Czasami zamiast autora-osoby należy umieścić nazwę organizacji/firmy,
-% tak jak w przykładzie poniżej
-\bibitem{pdf.spec}
-Adobe Systems Inc:
-\textit{Portable Document Format Reference Manual Version 1.2},
-Addison-Wesley, 1996.
-
-% Pozycja bibliograficzna typu: artykuł.
-% autor/autorzy: ,,tytuł-artykułu'', tytuł-czasopisma numer, rok, strony
-\bibitem{beebe}
-Beebe N.~H.~F.:
-,,Bibliography Prettyprinting and Syntax Checking'',
-\textit{TUGBoat} 14/4, 1995, 
-s.~395--419.
-
-% Pozycja bibliograficzna typu: rozdział z pracy zbiorowej/monografii.
-% autor/autorzy: ,,tytuł-rozdziału'', w: tytuł-książki
-%   (red. redaktor), miejsce-wydania rok-wydania, strony
-\bibitem{}
-Braams J. L.:
-The Status of Babel,
-w:~\textit{Proceedings of the IXth European TeX Conference}
-(W. Dol red.), Arnhem 1995, s.~17--26.
-
-\bibitem{XMLspec}
-Bray T.,
-Paoli J.,
-Sperberg-McQueen C.~M.:
-\textit{Extensible Markup Language (XML)~1.0},
-1998. \url{http://www.w3.org/TR/1998/REC-xml-19980210}.
-
-\bibitem{bryan}
-Bryan M.:
-\textit{SGML and HTML explained},
-Addison-Wesley
-1997.
-
-\bibitem{xslt}
-Clark J.:
-\textit{XSL Transformations (XSLT) Version~1.0},
-1999. \url{http://www.w3.org/TR/xslt}.
-
-\bibitem{p.flynn}
-Flynn P.:
-\textit{Understanding SGML and XML tools},
-Kluwer Academic Publishers
-1998.
-
-\bibitem{Goldfarb}
-Goldfarb C.:
-\textit{The SGML Handbook},
-Oxford University Press.
-
-\bibitem{lwc}
-Goossens M.,
-Rahtz S.:
-\textit{The {\LaTeX} Web Companion},
-Addison-Wesley
-1999.
-
-\bibitem{python.tkinter}
-Grayson J.:
-\textit{Python and Tkinter programming},
-Manning Publications.
-
-\bibitem{Herwinen-Pract}
-Van Herwijnen E.:
-\textit{Practical SGML},
-Kluwer Academic Publishers
-1990.
-
-\bibitem{lamport}
-Lamport L.:
-\textit{{\LaTeX}: a~document preparation system},
-Addison-Wesley
-1994.
-
-\bibitem{maler.ex}
-Maler E.:
-\textit{SGML exceptions and XML},
-1998.
-\url{http://www.arbortext.com/Think_Tank/XML_Resources/SGML_Exceptions_and_XML}.
-
-\bibitem{maler.devel}
-Maler E.,
-El Andaloussi J.:
-\textit{Developing SGML DTDs. From Text to Model to Markup},
-Prentice Hall
-1996.
-
-\bibitem{s.north}
-North S.:
-\textit{XML dla każdego},
-Helion
-2000.
-
-\bibitem{whirlwind-guide}
-Pepper S.:
-\textit{Whirlwind Guide to SGML Tools and Vendors}.
-\url{http://www.infotek.no/sgmltool/index.htm}.
-
-\bibitem{p.perl}
-Wall L.,
-Christiansen T.,
-Schwartz R.:
-\textit{Programming Perl},
-O'Reilly \&~Associates
-1996.
-
-\bibitem{db.guide}
-Walsh N.,
-Muellner L.:
-\textit{DocBook: The Definitive Guide},
-O'Reilly \&~Associates October~1999.
-Dokument dostępny także w~\url{http://www.docbook.org/}.
-
-\end{thebibliography}
-
-%
-% Spis tabel (jeżeli jest potrzebny):
+% spis tabel (jeżeli jest potrzebny):
 \listoftables
-%
-% Spis rysunków (jeżeli jest potrzebny):
-\listoffigures
 
-%
-% Skorowidz (opcjonalnie)
-%\printindex
+% spis rysunków (jeżeli jest potrzebny):
+\listoffigures
 
 \oswiadczenie
 

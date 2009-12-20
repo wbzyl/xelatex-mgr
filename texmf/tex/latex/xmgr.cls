@@ -1,17 +1,19 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xxmgr}[2007/10/15 v2.0.0 Praca magisterska]
-
-\def\@baseclass{report}
-\def\@rodzajpracy{magisterska}
-\def\@BInterlinia{\relax}
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{\@baseclass}}
-\PassOptionsToClass{a4paper,twoside,openany,12pt}{\@baseclass}
-
-\DeclareOption{xodstep}{\AtEndOfClass{\linespread{1.3}}}
+\ProvidesClass{xmgr}[2009/12/12 v2.0.0 (W. Bzyl)]
+%
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+\PassOptionsToClass{a4paper,twoside,openany,12pt}{report}
+% opcje klasy xmgr
+\DeclareOption{xodstep}{\AtEndOfClass{\linespread{2}}}
+\DeclareOption{brudnopis}{\AtEndOfClass{\setboolean{@brudnopis}{true}}}
+%
+\AtEndOfClass{\linespread{1.25}}
 \ProcessOptions
 %
-\LoadClass{\@baseclass}
+\LoadClass{report}
 %
+\RequirePackage{ifthen}
+\RequirePackage{fancyhdr}
 \RequirePackage{fontspec}
 \defaultfontfeatures{Mapping=tex-text}
 \RequirePackage{xunicode}
@@ -21,23 +23,44 @@
 \RequirePackage{url}
 \RequirePackage[polish]{polyglossia} 
 %
-\textwidth\paperwidth
-\advance\textwidth -55mm
-\oddsidemargin-1in
-\advance\oddsidemargin 30mm
-\evensidemargin-1in
-\advance\evensidemargin 25mm
-\topmargin -1in
-\advance\topmargin 25mm
-\setlength\textheight{48\baselineskip}
-\addtolength\textheight{\topskip}
-\marginparwidth15mm
+\newboolean{@brudnopis}
+%
+% Oznakowanie wersji dokumentu na każdej stronie w postaci
+% tego co autor wpisał jako argument polecenia \nrwersji
+% Domyślnie wstawiana jest bieżąca data 
+\def\wersja#1{\def\ThisDocVersion{#1}}
+\def\ymdtoday{\number\year.\number\month.\number\day\relax}
+%\wersja{\ymdtoday}
+%
+%\AtEndOfClass{\ifthenelse{\boolean{@brudnopis}}%
+% {\pagestyle{fancy}}{\pagestyle{empty}}}
+%\pagestyle{fancy}
+%\fancyhead[EL,OR]{\textsl{\rightmark}}
+%\fancyhead[ER,OL]{\textsl{\leftmark}}
+%
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{15pt}
+ 
+\pagestyle{fancy}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}  % bez numerów rozdziałów
+%\renewcommand{\sectionmark}[1]{\markright{#1}{}} % i sekcji
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{\nouppercase{\leftmark}}}
+\fancyhead[LO]{\ifthenelse{\boolean{@brudnopis}}%
+  {\texttt{\ThisDocVersion}}%
+  {\textit{\nouppercase{\rightmark}}}}
+% 
+%% \fancypagestyle{plain}{ %
+%% \fancyhf{} % remove everything
+%% \renewcommand{\headrulewidth}{0pt} % remove lines as well
+%% \renewcommand{\footrulewidth}{0pt}}
 %
 \widowpenalty999999
-\tolerance450
+\tolerance410
 \pretolerance250
 \hfuzz=1.5pt
-\hbadness1450
+\hbadness1410
 %
 \def\AndNextAuthor{\ifnum\language=0\& \else i \fi}
 \newcount\authornumber
@@ -57,12 +80,11 @@
 \def\email#1{% -- opcjonalny --
   \expandafter\def\csname thenetaddress\number\authornumber\endcsname
       {\ignorespaces#1\unskip}}
-
-%%\def\authorlist#1{\def\@author{#1}}
+%
 \def\@author{\@defaultauthorlist}
-
+%
 \newcount\count@@
-
+%
 \def\@defaultauthorlist{%
    \count@=\authornumber
    \count@@=0
@@ -80,16 +102,16 @@
       \advance\count@ by -1
    \repeat
   }
-
-\def\UniversityName#1{\def\Univ@Name{#1}}
-\def\Univ@Name{UNIWERSYTET GDAŃSKI\\
-  Wydział Matematyki, Fizyki i Informatyki\\
-  Instytut Informatyki}
+%
+\def\nazwaszkoly#1{\gdef\nazwa@szkoly{#1}}
+\def\nazwa@szkoly{UNIWERSYTET GDAŃSKI\\
+  Wydział Matematyki, Fizyki i Informatyki}
 
 %\def\nralbumu#1{\gdef\@nralbumu{#1}}
 %\def\@nralbumu{???\ClassError{xmgr}{Brak numeru albumu}\@ehc}
 \def\kierunek#1{\gdef\@kierunek{#1}}
-\def\@kierunek{???\ClassError{xmgr}{Nie podano kierunku studiow}\@ehc}
+\def\@kierunek{Informatyka}
+
 \def\opiekun#1{\gdef\@opiekun{#1}}
 \def\@opiekun{???\ClassError{xmgr}{Brak danych opiekuna pracy}\@ehc}
 \def\miejsce#1{\gdef\@miejsce{#1}}
@@ -137,7 +159,7 @@ i~materialnych innych osób.\endgraf }
     \let\footnoterule\relax
     \let \footnote \thanks
     \begin{center}%
-      {\large \textbf{\Univ@Name}\par}
+      {\large \textbf{\nazwa@szkoly}\par}
       \par 
     \end{center}%
      \vspace{1cm plus 1fill} 
@@ -288,10 +310,8 @@ i~materialnych innych osób.\endgraf }
      {\def\@noitemerr
        {\@latex@warning{Empty `thebibliography' environment}}%
       \endlist}
-%
-% Uproszczono polecenie \@makecaption, tak \.ze podpisy s\k{a}
+% Uproszczono polecenie \@makecaption, tak że podpisy są
 % teraz składane od lewego marginesu. 
-% Dodano polecenie \source do składania źródła
 \long\def\@makecaption#1#2{\par
   \vskip\abovecaptionskip
   \begin{flushleft}\small\textbf{#1}. #2\end{flushleft}
@@ -299,8 +319,13 @@ i~materialnych innych osób.\endgraf }
      %winno by\'c \'xr\'od{\l}o
   \par
 }
+% Dodano polecenie \source do składania źródła
 \def\source#1{\par \begin{flushleft}\small 
  \SourceName:~#1\end{flushleft}}
+%
+%
+\def\@BInterlinia{\relax}
+\def\@rodzajpracy{magisterska}
 %
 \def\IntroName{Wprowadzenie}
 \def\SummaryName{Zakończenie}
