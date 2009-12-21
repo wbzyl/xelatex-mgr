@@ -320,7 +320,7 @@ i~materialnych innych osób.\endgraf }
   \par
 }
 % Dodano polecenie \source do składania źródła
-\def\zrodlo#1{\par \begin{flushleft}\small 
+\def\source#1{\par \begin{flushleft}\small 
  \SourceName:~#1\end{flushleft}}
 %
 %
