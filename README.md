@@ -4,8 +4,7 @@ Klasa *xmgr.cls* umożliwia sprawne i wygodne przygotowanie w systemie
 **XeLaTeX** pracy magisterskiej zgodnie z wymogami obowiązującymi na
 kierunku Informatyka.
 
-Klasa jest adaptacją
-[wzmgr.cls](http://gnu.univ.gda.pl/~tomasz/prog/tex/wzmgr/wzmgr.html)
+Klasa jest adaptacją [wzmgr.cls] [wzmgr]
 opracowanej przez Tomasza Przechlewskiego dla Wydziału Zarządzania, UG.
 
 Klasa *xmgr* korzysta z następujących pakietów:
@@ -93,60 +92,8 @@ Polecenia `\autor`, `\nralbumu` (ewentualnie
 `\email`) można wstawić wielokrotnie jeżeli praca jest
 dziełem kilku autorów.
 
-## Przykład szablonu pracy
+## Przykłady szablonów
 
-<pre>% !TEX TS-program = xelatex
-% !TEX encoding = UTF-8
+[szablon1.tex](https://gist.github.com/9ac629d486068b2b80b7)
 
-\documentclass[brudnopis]{xmgr}
-
-\setmainfont[Mapping=tex-text]{Minion Pro:+onum}
-\setsansfont[Mapping=tex-text]{Myriad Pro}
-
-\wersja   {<em>etykieta</em>}
-
-\nazwaszkoly {Uniwersytet Gdański\\Wydział Fizyki, Matematyki i Informatyki}
-
-\author   {<em>imię nazwisko</em>}
-\nralbumu {<em>numer</em>}
-\email    {<em>imie@inf.ug.edu.pl</em>}
-
-\title    {<em>tytuł pracy</em>}
-
-\kierunek {<em>nazwa kierunku</em>}
-\date     {<em>rok obrony</em>}
-\miejsce  {<em>miejsce</em>}
-
-\opiekun  {<em>tytuł naukowy imię nazwisko</em>}
-\begin{document}
-
-\begin{abstract}... \end{abstract}
-\keywords{<em>słowo kluczowe</em>, <em>słowo kluczowe</em>, ... }
-\maketitle
-
-\introduction
-
-\chapter{<em>tytuł-rozdziału</em>}
-
-\section{<em>tytuł-podrozdziału</em>}
-
-\section{<em>tytuł-podrozdziału</em>}
-
-\summary
-
-% załączniki (opcjonalnie):
-\appendix
-\chapter{<em>tytuł-załącznika</em>}
-
-\chapter{<em>tytuł-załącznika</em>}
-
-% literatura (obowiązkowo):
-\bibliographystyle{unsrt}
-\bibliography{xml}
-
-% spisy tabel i rysunków (jeśli występują w pracy):
-\listoftables
-\listoffigures
-
-\end{document}
-</pre>
+[wzmgr]: http://gnu.univ.gda.pl/~tomasz/prog/tex/wzmgr/wzmgr.html "wzmgr"
