@@ -83,7 +83,7 @@ zostanie wpisane Gdańsk</dd>
 <dd>zakończenie</dd>
 
 <dt><code>\zrodlo</code></dt> 
-<dd>źródło, umieszczane pod tabelą i rysunkiem;</dd>
+<dd>źródło, umieszczane pod tabelą i rysunkiem</dd>
 </dl>
 
 ## Uwagi
