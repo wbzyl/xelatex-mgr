@@ -1,0 +1,86 @@
+\documentclass[brudnopis]{xmgr}
+%
+% kompilacja:
+%
+%   xelatex szablon-bib
+%   bibtex  szablon-bib
+%   xelatex szablon-bib
+%   xelatex szablon-bib
+
+% tak można zmienić domyślną rodzinę fontów Latin Modern 
+%   na Minion + Myriad + Monaco:
+%\defaultfontfeatures{Scale=MatchLowercase}
+%\setmainfont[Mapping=tex-text]{Minion Pro:+onum}
+%\setsansfont[Mapping=tex-text]{Myriad Pro}
+%\setmonofont[Scale=0.75]{Monaco}
+
+\wersja   {wersja wstępna [\ymdtoday]}
+
+\author   {Imię Nazwisko}
+\nralbumu {xxx\,xxx}
+\email    {login@inf.ug.edu.pl}
+
+\title    {Tytuł pracy}
+\date     {2100}
+\miejsce  {Gdańsk}
+
+\opiekun  {prof. dr hab. D. Htunk}
+
+\begin{document}
+
+\begin{abstract}
+  Streszczenie…
+\end{abstract}
+\keywords{Ruby, 
+ programowanie, 
+ dokumenty strukturalne}
+
+% tytuł i spis treści
+\maketitle
+
+% wstęp
+\introduction
+
+Jak pisać pracę magisterską?
+\url{http://sinatra.inf.ug.edu.pl/seminarium/info/jak-pisac}
+
+\chapter{Tytuł rozdziału}
+
+SGML~\cite{Goldfarb:2002:CFG} jest to \emph{metajęzyk} 
+służący do opisywania struktury i~zawartości dokumentów.
+    
+\section{Tytuł rozdziału}
+
+Typowy proces produkcji dokumentów w~standardzie SGML
+podzielony jest na kilka części. Najważniejsze elementy tego
+procesu są~\cite[opisane tutaj]{Eisenberg:2002:SXM}.
+
+\subsection{Tytuł podrozdziału}
+
+\summary
+
+Streszczenie…
+
+% załączniki (opcjonalnie):
+\appendix
+\chapter{Tytuł załącznika}
+
+Załącznik…
+
+\chapter{Tytuł załącznika}
+
+Załącznik…
+
+% literatura
+\bibliographystyle{unsrt}
+\bibliography{literatura}
+
+% spis tabel
+%\listoftables
+
+% spis rysunków
+%\listoffigures
+
+\oswiadczenie
+
+\end{document}

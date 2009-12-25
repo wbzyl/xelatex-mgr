@@ -1,0 +1,49 @@
+\documentclass[12pt]{amsbook}
+\usepackage{amsrefs}
+
+%\providecommand{\cyr}{}
+%\providecommand{\cprime}{\textprime}
+%\providecommand{\germ}{\mathfrak }
+
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage[polish]{polyglossia} 
+
+\setmainfont[Mapping=tex-text]{Minion Pro:+onum}
+\setsansfont[Mapping=tex-text]{Myriad Pro}
+
+\raggedbottom
+
+\begin{document}
+
+\begin{bibdiv}
+\begin{biblist}
+
+\bib{Goldfarb2002}{book}{
+    author={Charles F. Goldfarb},
+    author={Paul Prescod},
+     title={Charles F. Goldfarb's XML handbook},
+   edition={Fourth},
+ publisher={Princeton-Hall},
+   address={Englewood Cliffs, NJ 07632, USA},
+      date={2002},
+      ISBN={0-13-065198-2; 978-0-13-065198-3},
+}
+
+\bib{Eisenberg2002}{article}{
+    author={Andrew Eisenberg},
+    author={Jim Melton},
+     title={SQL\slash XML is making good progress},
+      date={2002},
+      ISSN={0000-0000},
+   journal={SIGMOD},
+    volume={31},
+    number={2},
+     pages={101\ndash 108},
+}
+
+\end{biblist}
+\end{bibdiv}
+\end{document}
