@@ -92,8 +92,20 @@ Polecenia `\autor`, `\nralbumu` (ewentualnie
 `\email`) można wstawić wielokrotnie jeżeli praca jest
 dziełem kilku autorów.
 
+
 ## Przykłady szablonów
 
-[szablon1.tex](https://gist.github.com/9ac629d486068b2b80b7)
+W katalogu *szablony* umieszczono szablon pracy
+korzystającej z *bibtex-a* oraz szablon pracy 
+używający pakietu *amsrefs*.
+
+Szablony te są też dostępne tutaj:
+
+* [xelatex + bibtex] []
+* [xelatex + amsrefs] []
+
+
+[szablon + bibtex]: http://gist.github.com/263713
+[szablon + amsrefs]: http://gist.github.com/263715
 
 [wzmgr]: http://gnu.univ.gda.pl/~tomasz/prog/tex/wzmgr/wzmgr.html "wzmgr"
