@@ -95,6 +95,9 @@ dziełem kilku autorów.
 
 ## Przykłady szablonów
 
+Plik *magisterka.tex* ilustruje jak korzystać 
+z klasy *xmgr.cls*. 
+
 W katalogu *szablony* umieszczono szablon pracy
 korzystającej z *bibtex-a* oraz szablon pracy 
 używający pakietu *amsrefs*.
