@@ -52,7 +52,7 @@ tylko jeśli wybrano opcję <em>brudnopis</em></dd>
 w piśmie okólnym Rektora UG z dnia 13 grudnia 2004</dd>
 
 <dt><code>\autor</code></dt>
-<dd>imię oraz nazwisko autora;</dd>
+<dd>imię oraz nazwisko autora</dd>
 
 <dt><code>\nralbumu</code></dt>
 <dd>numer albumu</dd>
