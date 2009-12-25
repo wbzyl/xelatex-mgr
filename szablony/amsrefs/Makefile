@@ -1,23 +1,17 @@
+MAIN=szablon
+
 TEX=xelatex
 BIBTEX=bibtex
 
 %.pdf : %.tex
 	$(TEX) $* 
 
-bib :
-	$(TEX) szablon-bib
-	$(BIBTEX) szablon-bib 
-	$(TEX) szablon-bib
-	$(TEX) szablon-bib
-
-amsrefs :
-	$(TEX) szablon-amsrefs
-	$(BIBTEX) szablon-amsrefs 
-	$(TEX) szablon-amsrefs
-	$(TEX) szablon-amsrefs
+all :
+	$(TEX) $(MAIN)
+	$(TEX) $(MAIN)
 
 clean : 
-	rm -rf *.{log,aux,out,lot,lof,ilg,toc,blg} *~
+	rm -rf $(MAIN).{log,aux,out,lot,lof,ilg,toc,blg} *~
 
 xclean : clean
-	rm -rf *.{ind,pdf,idx,bbl} 
+	rm -rf $(MAIN).{ind,pdf,idx,bbl} 
