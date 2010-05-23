@@ -92,6 +92,10 @@ Polecenia `\autor`, `\nralbumu` (ewentualnie
 `\email`) można wstawić wielokrotnie jeżeli praca jest
 dziełem kilku autorów.
 
+Aby rozdziały zaczynały się na stronach nieparzystych
+dopisujemy opcję *openright*:
+
+    \documentclass[openright]{xmgr}
 
 ## Przykłady szablonów
 
