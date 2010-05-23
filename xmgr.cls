@@ -2,7 +2,7 @@
 \ProvidesClass{xmgr}[2009/12/12 v2.0.0 (W. Bzyl)]
 %
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
-\PassOptionsToClass{a4paper,twoside,openany,12pt}{report}
+\PassOptionsToClass{a4paper,twoside,12pt}{report}
 % opcje klasy xmgr
 \DeclareOption{xodstep}{\AtEndOfClass{\linespread{2}}}
 \DeclareOption{brudnopis}{\AtEndOfClass{\setboolean{@brudnopis}{true}}}
