@@ -99,6 +99,10 @@ dopisujemy opcję *openright*:
 
     \documentclass[openright]{xmgr}
 
+Do składania podziękowań, dydykacji oraz umieszczania w pracy
+cytatów można posłużyć się klasą
+[epigraph](http://www.tex.ac.uk/tex-archive/help/Catalogue/entries/epigraph.html).
+
 ## Przykłady szablonów
 
 Plik *magisterka.tex* pokazuje jak korzystać 
