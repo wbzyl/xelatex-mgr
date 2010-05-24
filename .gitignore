@@ -6,6 +6,8 @@
 *.out
 *.pdf
 *.toc
+*.bbl
+*.blg
 \#*
 .\#*
 *~
