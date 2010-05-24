@@ -7,13 +7,15 @@ kierunku Informatyka.
 Klasa jest adaptacją [wzmgr.cls] [wzmgr]
 opracowanej przez Tomasza Przechlewskiego dla Wydziału Zarządzania, UG.
 
-Klasa *xmgr* korzysta z następujących pakietów:
+Klasa *xmgr* to zmodyfikowana klasa standardowa *report*
+Dodatkowo klasa korzysta z następujących pakietów:
 
 * ifthen
 * fancyhdr
 * xunicode
 * xltxtra
 * graphicx
+* color
 * hyperref
 * url
 * fontspec

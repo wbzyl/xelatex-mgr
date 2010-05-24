@@ -19,7 +19,11 @@
 \RequirePackage{xunicode}
 \RequirePackage{xltxtra}
 \RequirePackage{graphicx}
-\RequirePackage{hyperref}
+%
+\RequirePackage{color}
+\definecolor{xmgrBrickRed}{cmyk}{0,0.89,0.94,0.28}
+\usepackage[colorlinks=true,linkcolor=xmgrBrickRed,bookmarks=false]{hyperref}
+%
 \RequirePackage{url}
 \RequirePackage[polish]{polyglossia} 
 %
