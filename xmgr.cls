@@ -26,7 +26,10 @@
 \hypersetup{colorlinks=true,linkcolor=xmgrBrickRed,bookmarks=true}
 %
 \RequirePackage{url}
-\RequirePackage[polish]{polyglossia} 
+%\RequirePackage[polish]{polyglossia}
+% polyglossia >= v1.2.0 no longer supports loading language definition files
+\RequirePackage{polyglossia}
+\setdefaultlanguage{polish} 
 %
 \newboolean{@brudnopis}
 %
