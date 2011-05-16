@@ -59,7 +59,7 @@ w piśmie okólnym Rektora UG z dnia 13 grudnia 2004</dd>
 <dt><code>\nralbumu</code></dt>
 <dd>numer albumu</dd>
 
-<dt><code>\email</code></dt> 
+<dt><code>\email</code></dt>
 <dd>adres email autora (opcjonalnie)</dd>
 
 <dt><code>\kierunek</code></dt>
@@ -69,47 +69,52 @@ w piśmie okólnym Rektora UG z dnia 13 grudnia 2004</dd>
 <dd>tytuł naukowy, imię i nazwisko promotora</dd>
 
 <dt><code>\miejsce</code></dt>
-<dd>miejsce obrony (opcjonalnie); jeśli nie podano 
+<dd>miejsce obrony (opcjonalnie); jeśli nie podano
 zostanie wpisane Gdańsk</dd>
 
 <dt><code>\keywords</code></dt>
 <dd>lista słów kluczowych oddzielonych przecinkami</dd>
 
-<dt><code>\abstract</code></dt> 
+<dt><code>\abstract</code></dt>
 <dd>streszczenie (środowisko)</dd>
 
-<dt><code>\introduction</code></dt> 
+<dt><code>\introduction</code></dt>
 <dd>wstęp</dd>
 
-<dt><code>\summary</code></dt> 
+<dt><code>\summary</code></dt>
 <dd>zakończenie</dd>
 
-<dt><code>\zrodlo</code></dt> 
+<dt><code>\zrodlo</code></dt>
 <dd>źródło, umieszczane pod tabelą i rysunkiem</dd>
 </dl>
 
 ## Uwagi
 
-Polecenia `\autor`, `\nralbumu` (ewentualnie
+1\. Polecenia `\autor`, `\nralbumu` (ewentualnie
 `\email`) można wstawić wielokrotnie jeżeli praca jest
 dziełem kilku autorów.
 
-Aby rozdziały zaczynały się na stronach nieparzystych
+2\. Aby rozdziały zaczynały się na stronach nieparzystych
 dopisujemy opcję *openright*:
 
     \documentclass[openright]{xmgr}
 
-Do składania podziękowań, dydykacji oraz umieszczania w pracy
+3\. Do składania podziękowań, dydykacji oraz umieszczania w pracy
 cytatów można posłużyć się klasą
 [epigraph](http://www.tex.ac.uk/tex-archive/help/Catalogue/entries/epigraph.html).
 
+4\. Listingi programów składamy korzystając z pakietu Konrada Rudolpha
+o nazwie [minted](http://code.google.com/p/minted/downloads/list).
+Instalacja pakietu jest opisana w [dokumentacji](http://code.google.com/p/minted/downloads/detail?name=minted.pdf&can=2&q=).
+
+
 ## Przykłady szablonów
 
-Plik *magisterka.tex* pokazuje jak korzystać 
-z klasy *xmgr.cls*. 
+Plik *magisterka.tex* pokazuje jak korzystać
+z klasy *xmgr.cls*.
 
 W katalogu *szablony* umieszczono szablon pracy
-korzystającej z *bibtex-a* oraz szablon pracy 
+korzystającej z *bibtex-a* oraz szablon pracy
 używający pakietu *amsrefs*.
 
 Szablony te są też dostępne tutaj:
