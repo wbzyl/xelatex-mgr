@@ -1,4 +1,7 @@
 \documentclass[brudnopis]{xmgr}
+% Jeśli nowe rozdziały mają się zaczynać na stronach
+% nieparzystych:
+%\documentclass[openright]{xmgr}
 
 %\defaultfontfeatures{Scale=MatchLowercase}
 %\setmainfont[Numbers=OldStyle,Ligatures=TeX]{Minion Pro}
@@ -8,7 +11,7 @@
 \setsansfont[Numbers=OldStyle,Mapping=tex-text]{Myriad Pro}
 %\setmonofont[Scale=0.75]{Monaco}
 
-% Opcjonalnie identyfikator dokumentu 
+% Opcjonalnie identyfikator dokumentu
 % drukowany tylko z włączoną opcją 'brudnopis':
 \wersja   {wersja wstępna [\ymdtoday]}
 
@@ -30,6 +33,7 @@
 
 \begin{document}
 
+% streszczenie
 \begin{abstract}
   Aczkolwiek w~ciągu ostatnich lat skład tekstu wspomagany komputerowo
   całkowicie wyeliminował stosowanie tradycyjnych technik drukarskich,
@@ -37,15 +41,17 @@
   publikacji, które w~ogóle nie wykorzystują papieru, a~nośnikem
   informacji staje się ekran komputera nie jest obserwowany.
 \end{abstract}
-\keywords{SGML, 
- XML, 
- XSL, 
- dokumenty elektroniczne, 
+
+% słowa kluczowe
+\keywords{SGML,
+ XML,
+ XSL,
+ dokumenty elektroniczne,
  dokumenty strukturalne}
 
 % tytuł i spis treści
 \maketitle
-%
+
 % wstęp
 \introduction
 
@@ -77,7 +83,7 @@ perspektywy nie zmieniła się wcale.
 
 SGML~\cite{Goldfarb:2002:CFG} jest to \emph{metajęzyk} służący do opisywania
 struktury i~zawartości dokumentów (standard ISO 8879).  Do
-podstawowych zalet takiego podejścia należy: 
+podstawowych zalet takiego podejścia należy:
 \begin{itemize}
 \item
 jest to międzynarodowy
@@ -85,7 +91,7 @@ standard dostępny na wielu platformach sprzętowo\-systemowych;
 \item
 jest to
 język opisu \emph{każdego\/} dokumentu, o~praktycznie nieograniczonych
-możliwościach (\emph{rozszerzalność\/}) 
+możliwościach (\emph{rozszerzalność\/})
 \item
 umożliwia powtórne
 wykorzystywanie dokumentów, także w sposób inny od poprzedniego
@@ -102,7 +108,7 @@ z~użyciem różnych mediów np. w~formie drukowanej na papierze,
 w~postaci hipertekstu albo tekstowej bazy danych. Pozwala to
 zminimalizować koszty\index{koszty}, cały cykl wydawniczy dokonuje się
 na jednym dokumencie -- pliku SGML-owym, a~nie na wielu.
-    
+
 \section{Elementy składowe systemu SGML}
 
 Standard SGML to specyfikacja techniczna metajęzyka. Zaś systemem
@@ -111,7 +117,7 @@ tworzenia, składowania i~obróbki dokumentów z~wykorzystaniem tego
 standardu}.  Typowy proces produkcji dokumentów w~standardzie SGML
 podzielony jest na kilka części. Najważniejszymi elementami tego
 procesu są~\cite[s.~45--47]{Eisenberg:2002:SXM}:
-    
+
 \begin{itemize}
 \item Klasyfikacja tworzonych dokumentów w~grupy i~wynikający z~tego
   dobór definicji typu dokumentu\footnote{Definicja typu dokumentu DTD
@@ -141,7 +147,7 @@ jednym z~celów i~korzyści stosowania systemu opartego na standardzie
 SGML.
 
 \begin{figure}[!tbh]
-\centering 
+\centering
 \includegraphics[width=.8\hsize]{fig/schemat}
 \caption{Schemat archiwum\label{RYS.2}}
 \source{Opracowanie własne}
@@ -156,7 +162,7 @@ dokumentu, zależności między tymi elementami. Z~tego powodu stworzenie
 dobrego DTD jest zadaniem niełatwym. Ponadto DTD jest tylko częścią
 systemu SGML; oprócz niego potrzebne są narzędzia do formatowania
 dokumentów, takie jak arkusze stylów DSSSL czy też XSL/XSLT.
-    
+
 Duże koszty implementacji przemawiają często za rozważeniem
 wykorzystania, czy też adaptacji w~systemie SGML udostępnionych
 publicznie gotowych DTD. W~omawianym projekcie postąpiono podobnie,
@@ -169,7 +175,7 @@ projektu \textit{Text Encoding Iniciative} oraz
 DocBook opracowany przez konsorcjum firm, głównie sektora IT,
 używających technologii SGML do tworzenia dokumentacji do swoich
 produktów.
-    
+
 \section{DocBook}
 \emph{DocBook DTD}\index{DocBook|(} to typ dokumentu definiujący
 strukturę i~zawartość zbioru znaczników SGML, służących do
@@ -190,7 +196,7 @@ SimpleDocBook  & 93  & 234 \\ \hline
 TEI & brak danych & 3 \\ \hline
 HTML & 98  & 234 \\ \hline
 \end{tabular}
-\caption{Porównanie wielkości popularnych definicji 
+\caption{Porównanie wielkości popularnych definicji
   typu dokumentu\label{tab:dtd-cmp}}
 \source{Obliczenia własne}
 \end{table}
@@ -201,7 +207,7 @@ i~niekomercyjnych projektach tworzenia dokumentacji komputerowej
 Documentation Project}, \textit{RedHat Gnome Desktop},
 \textit{Postgres SQL RDBMS}, \textit{PHP3 Hypertext Preprocesor} czy
 dokumentacja do systemu FreeBSD).\index{DocBook|)}
-    
+
 \section{Edytory sterowane składnią\label{s:edytor}}
 
 Pierwszym elementem systemu SGML jest edytor
@@ -219,7 +225,7 @@ Pewnym rozwiązaniem opisywanych wyżej problemów jest wykorzystanie
 szablonów, w~które, od jakiegoś czasu są wyposażane wszystkie
 popularne edytory biurowe\index{edytor!biurowy}.  Posługując się
 szablonami, autor nie definiuje wyglądu samodzielnie tylko wypełnia
-treścią zdefiniowany z~góry szablon dokumentu.  
+treścią zdefiniowany z~góry szablon dokumentu.
 Stanowiąc niewątpliwy
 krok do przodu takie podejście nie rozwiązuje jednak wszystkich
 problemów.
@@ -227,7 +233,7 @@ problemów.
 Komercyjne edytory SGML, są w~chwili obecnej ciągle bardzo
 drogie, zaś oprogramowanie rozprowadzane na różnego rodzaju licencjach
 \emph{Open Source\/} nie oferuje jeszcze wygody pracy, do której
-przyzwyczaili się użytkownicy edytorów biurowych.  
+przyzwyczaili się użytkownicy edytorów biurowych.
 
 \section{Emacs i~psgml}
 
@@ -239,13 +245,13 @@ psgml. Środowisko to wspomaga autora poprzez:
 kolorowanie składni dokumentów SGML i~aplikacji SGML, automatyczne
 uzupełnianie brakujących znaczników, automatyczną kontrolę jakie
 w~danym kontekście można wstawiać znaczniki i~atrybuty, wyświetlanie
-informacje odnośnie możliwych i~domyślnych wartości. 
+informacje odnośnie możliwych i~domyślnych wartości.
 Wszystkie funkcje są dostępne za pomocą
 odpowiednie skrótów klawiszowych a~także dostępne poprzez wybór
 wskaźnikiem myszy odpowiedniej pozycji z~menu. Pakiet ten umożliwia
 również wywołanie zewnętrznego parsera\index{parser} SGML celem
 weryfikacji poprawności dokumentu.
-      
+
 \chapter{Narzędzia i~standardy pokrewne}
 
 Systemy SGML, ze względu na mnogość funkcji jakie spełniają i~ich
@@ -257,7 +263,7 @@ językach, jak: C, C++, Perl czy Python. Edytory strukturalne, filtry
 do transformacji formatów czy parsery\index{parser} i~biblioteki
 przydatne do konstrukcji dalszych narzędzi, tworzone są według potrzeb
 określonych, pojedynczych systemów.
-    
+
 Z~drugiej strony, twórcy oprogramowania postanowili pójść krok dalej
 i~połączyć te różne narzędzia w~jedną całość. Tą całość miał stanowić
 DSSSL lub jego XML-owy odpowiednik -- standard XSL. Ze względu na
@@ -267,7 +273,7 @@ podejściem. Przemawiają za tym różne argumenty, ale najważniejszym
 z~nich jest to, że mamy tu możliwość stworzenia niezależnego od
 platformy programowej i~narzędziowej zbioru szablonów -- przepisów jak
 przetwarzać dokumenty SGML.
-    
+
 \section{Przetwarzanie dokumentów SGML -- standard DSSSL\label{s:dsssl}}
 
 DSSSL (\textit{Document Style Semantics and Specification Language\/})
@@ -295,7 +301,7 @@ DSSSL w~ograniczonym zakresie, głównie w~części definiującej język
 stylu, który odpowiada za opatrzenie dokumentu czysto strukturalnego
 w~informacje formatujące. Daje to możliwość publikacji dokumentów SGML
 zarówno w~postaci elektronicznej, hipertekstowej czy też drukowanej.
-      
+
 \section{Przetwarzanie dokumentów XML -- standard XSL\label{s:xsl}}
 
 Tak jak XML jest \emph{uproszczoną\/} wersją standardu SGML, tak XSL
@@ -304,7 +310,7 @@ wyróżnić można w~tym standardzie następujące części składowe:
 
 \begin{itemize}
 \item język transformacji (XSLT) To definicja języka służącego do
-  transformacji dokumentu.      
+  transformacji dokumentu.
 \item język zapytań (XPath) służy do identyfikowania poszczególnych
   fragmentów dokumentu.
 \item język stylu deefiniujący sposób formatowania dokumentów XML.
@@ -317,7 +323,7 @@ niezbędne jest zebranie odpowiedniego zestawu narzędzi. Narzędzi do
 przetwarzania dokumentów SGML jest wiele. Są to zarówno całe
 systemy zintegrowane, jak i~poszczególne programy, biblioteki czy
 skrypty wspomagające.
-    
+
 \section{Narzędzia do przeglądania dokumentów SGML}
 
 Do tej kategorii oprogramowania zaliczamy przeglądarki dokumentów
@@ -336,7 +342,7 @@ ciągle do wielu problemów\footnote{Z~innych mniej popularnych
   dokumentów na format HTML (rzadziej bezpośrednio wyświetlają
   dokumenty XML).  Ta kategoria oprogramowania ma, z~punktu widzenia
   projektu, znaczenie drugorzędne.}.
-      
+
 \section{Parsery SGML}
 Program \texttt{nsgmls} (z~pakietu \texttt{SP} Jamesa Clarka) jest
 doskonałym parserem\index{parser} dokumentów SGML, dostępnym
@@ -351,14 +357,14 @@ program \texttt{sgmlnorm} do normalizacji, program \texttt{sx} służący
 do konwersji dokumentu SGML na XML oraz biblioteki programistyczne,
 przydatne przy tworzeniu specjalistycznych aplikacji służących do
 przetwarzania dokumentów SGML.
-      
+
 W~przypadku dokumentów XML publicznie dostępnych, parserów jest
 w~chwili obecnej kilkadziesiąt. Do popularniejszych zaliczyć można
 Microsoft Java XML Parser firmy Microsoft, LT XML firmy Language
 Technology Group, Exapt oraz XP (James Clark)
-      
+
 \section{Wykorzystanie języków skryptowych}
-      
+
 \section{Wykorzystanie szablonów XSL}
 
 Stosując wersję XML typu DocBook można wykorzystać szablony stylów
@@ -390,8 +396,8 @@ zawierającym ponad 50 różnych ,,obiektów formatujących'', począwszy od
 najprostszych, takich jak prostokątne bloki tekstu poprzez wyliczenia,
 tabele i~odsyłacze. Obiekty te można formatować wykorzystując przeszło
 200 różnych właściwości (\emph{properties\/}), takich jak: kroje,
-odmiany i~wielkości pisma, odstępy, kolory itp.  
-W~tym dokumencie przedstawione jest absolutne miniumum informacji 
+odmiany i~wielkości pisma, odstępy, kolory itp.
+W~tym dokumencie przedstawione jest absolutne miniumum informacji
 na temat standardu XSL:FO.
 
 Cały dokument XSL:FO zawarty jest wewnątrz elementu \texttt{fo:root}.
@@ -407,7 +413,7 @@ Element ten zawiera (w~podanej niżej kolejności):
  jego sformatowania i~podziału na strony.
 \end{itemize}
 
-% zakończenie 
+% zakończenie
 \summary
 Możliwości, jakie stoją przed archiwum prac magisterskich opartych na
 XML-u, są ograniczone jedynie czasem, jaki należy poświęcić na pełną
