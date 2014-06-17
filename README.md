@@ -88,22 +88,52 @@ zostanie wpisane Gdańsk</dd>
 <dd>źródło, umieszczane pod tabelą i rysunkiem</dd>
 </dl>
 
-## Uwagi
+## FAQ, czyli często zadawane pytania
 
-1\. Polecenia `\autor`, `\nralbumu` (ewentualnie
+1\. W pliku *magisterka.tex* ustawione są domyślne fonty
+
+    \setmainfont[Numbers=OldStyle,Mapping=tex-text]{Minion Pro}
+    \setsansfont[Numbers=OldStyle,Mapping=tex-text]{Myriad Pro}
+
+Fonty *Minion Pro* oraz *Myriad Pro*  częścią oprogramowania
+[Acrobat Reader](http://get.adobe.com/pl/reader/otherversions/).
+
+Jeśli po instalacji *Acrobat Readera* program *XeLaTeX*
+nie potrafi ich znaleźć, to możemy je zainstalować samemu.
+W Linuksie możemy to zrobić zwykły użytkownik.
+W tym celu w kopiujemy fonty do katalogu *~/.fonts/*:
+
+    mkdir -p ~/.fonts/adobe
+    cp {Minion,Myriad}*.otf ~/.fonts/adobe
+    fc-cache ~/.fonts
+
+Na koniec sprawdzamy czy fonty zostały poprawnie zainstalowane:
+
+    fc-list | egrep 'Minion|Myriad'
+      Minion Pro:style=Bold
+      Minion Pro:style=Bold Italic
+      Minion Pro:style=Italic
+      Minion Pro:style=Regular
+      Myriad CAD:style=Regular
+      Myriad Pro:style=Bold
+      Myriad Pro:style=Bold Italic
+      Myriad Pro:style=Italic
+      Myriad Pro:style=Regular
+
+2\. Polecenia `\autor`, `\nralbumu` (ewentualnie
 `\email`) można wstawić wielokrotnie jeżeli praca jest
 dziełem kilku autorów.
 
-2\. Aby rozdziały zaczynały się na stronach nieparzystych
+3\. Aby rozdziały zaczynały się na stronach nieparzystych
 dopisujemy opcję *openright*:
 
     \documentclass[openright]{xmgr}
 
-3\. Do składania podziękowań, dydykacji oraz umieszczania w pracy
+4\. Do składania podziękowań, dydykacji oraz umieszczania w pracy
 cytatów można posłużyć się klasą
 [epigraph](http://www.tex.ac.uk/tex-archive/help/Catalogue/entries/epigraph.html).
 
-4\. Listingi programów składamy korzystając z pakietu Konrada Rudolpha
+5\. Listingi programów składamy korzystając z pakietu Konrada Rudolpha
 o nazwie [minted](http://code.google.com/p/minted/downloads/list).
 Instalacja pakietu jest opisana w [dokumentacji](http://code.google.com/p/minted/downloads/detail?name=minted.pdf&can=2&q=).
 
