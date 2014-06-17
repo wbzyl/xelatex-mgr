@@ -97,7 +97,6 @@ zostanie wpisane Gdańsk</dd>
 
 Fonty *Minion Pro* oraz *Myriad Pro*  częścią oprogramowania
 [Acrobat Reader](http://get.adobe.com/pl/reader/otherversions/).
-
 Jeśli po instalacji *Acrobat Readera* program *XeLaTeX*
 nie potrafi ich znaleźć, to możemy je zainstalować samemu.
 W Linuksie może to zrobić zwykły użytkownik.
