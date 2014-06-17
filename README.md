@@ -101,7 +101,8 @@ Jeśli po instalacji *Acrobat Readera* program *XeLaTeX*
 nie potrafi ich znaleźć, to możemy je zainstalować samemu.
 W Linuksie może to zrobić zwykły użytkownik.
 
-W tym celu w kopiujemy fonty do katalogu *~/.fonts/*:
+W tym celu w kopiujemy fonty do katalogu *~/.fonts/* i wykonujemy
+polecenie *fc-cache*:
 
     mkdir -p ~/.fonts/adobe
     cp ⟨ścieżka do katalogu z fontami⟩/{Minion,Myriad}*.otf ~/.fonts/adobe
@@ -114,7 +115,6 @@ Na koniec sprawdzamy czy fonty zostały poprawnie zainstalowane:
       Minion Pro:style=Bold Italic
       Minion Pro:style=Italic
       Minion Pro:style=Regular
-      Myriad CAD:style=Regular
       Myriad Pro:style=Bold
       Myriad Pro:style=Bold Italic
       Myriad Pro:style=Italic
