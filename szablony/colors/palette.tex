@@ -1,0 +1,66 @@
+\documentclass[12pt,a4paper]{article}
+
+\RequirePackage{polyglossia}
+\setdefaultlanguage{polish}
+
+\usepackage{multicol}
+\pagestyle{empty}
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{22cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\usepackage[dvipsnames]{color}
+\definecolor{sa}{named}{RubineRed}
+\definecolor{sb}{named}{JungleGreen}
+\definecolor{sc}{named}{Bittersweet}
+\definecolor{wa}{named}{RubineRed}
+\definecolor{wb}{named}{JungleGreen}
+\definecolor{wc}{named}{Bittersweet}
+\definecolor{wd}{named}{MidnightBlue}
+
+%% \usepackage{color}
+%% \definecolor{sa}{cmyk}{0,1,0.13,0}
+%% \definecolor{sb}{cmyk}{0.99,0,0.52,0}
+%% \definecolor{sc}{cmyk}{0,0.75,1,0.24}
+%% \definecolor{wa}{cmyk}{0,1,0.13,0}
+%% \definecolor{wb}{cmyk}{0.99,0,0.52,0}
+%% \definecolor{wc}{cmyk}{0,0.75,1,0.24}
+%% \definecolor{wd}{cmyk}{0.98,0.13,0,0.43}
+
+\begin{document}
+\renewcommand*{\DefineNamedColor}[4]{%
+  \textcolor[named]{#2}{\rule{7mm}{7mm}}\quad
+  \texttt{#2}\strut\\}
+
+\begin{center}
+  \Large Named colors in \texttt{dvipsnam.def}
+\end{center}
+
+\begin{multicols}{3}
+\input{dvipsnam.def}
+\end{multicols}
+
+\newpage
+
+Streszczenie:
+
+\begin{description}
+\item[sa] \textcolor{sa}{powinno zawierać omówienie głównych tez pracy magisterskiej, celów jakie autor sobie postawił}
+\item[sb] \textcolor{sb}{powinno zawierać informację czy udało się je zrealizować}
+\item[sc] \textcolor{sc}{należy także napisać jakimi metodami, technologiami się posłużono i jakie to przyniosło efekty}
+\end{description}
+
+
+Wstęp:
+
+\begin{description}
+\item[wa] \textcolor{wa}{jak nazwa wskazuje, ma wprowadzać w obszar problemowy pracy}
+\item[wb] \textcolor{wb}{powinno przedstawiać ogólne uwarunkowania problemu oraz opisać go w kontekście}
+\item[wc] \textcolor{wc}{powinno zawierać powód dlaczego poruszyło się taki temat}
+\item[wd] \textcolor{wd}{należy odnieść się do dorobku innych}
+\end{description}
+
+\end{document}
