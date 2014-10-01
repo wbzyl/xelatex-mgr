@@ -204,7 +204,8 @@ i~materialnych innych osób.\endgraf }
   \global\let\date\relax
   \global\let\and\relax
   %
-  \clearpage 
+  \thispagestyle{empty}
+  \cleardoublepage
   \thispagestyle{empty}
   \InsertAbstractHere
   \section*{Słowa kluczowe}
