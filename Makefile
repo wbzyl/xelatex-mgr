@@ -6,7 +6,7 @@ BIBTEX=bibtex
 .PHONY: pdf
 
 %.pdf : %.tex
-	$(TEX) $* 
+	$(TEX) $*
 
 mgr :
 	$(TEX) $(BOOK)
@@ -14,8 +14,8 @@ mgr :
 	$(TEX) $(BOOK)
 	$(TEX) $(BOOK)
 
-clean : 
-	rm -rf *.{log,aux,out,lot,lof,ilg,toc,blg} *~
+clean :
+	rm -rf *.{log,aux,out,lot,lof,ilg,toc,blg,synctex.gz} *~
 
 xclean : clean
-	rm -rf *.{ind,pdf,idx,bbl} 
+	rm -rf *.{ind,pdf,idx,bbl}
