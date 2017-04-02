@@ -103,17 +103,6 @@ wykorzystywanie dokumentów, także w sposób inny od poprzedniego
 samego dokumentu SGML-owego).
 \end{itemize}
 
-\begin{minted}{ruby}
-class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
-  # GET /articles
-  # GET /articles.json
-  def index
-    @articles = Article.all
-  end
-end
-\end{minted}
-
 Standard służy jedynie do opisywania logicznej struktury dokumentów,
 nie determinuje ostatecznej formy prezentacji informacji, która może
 być docelowo przekształcana w~najróżniejszy sposób. Dokument
