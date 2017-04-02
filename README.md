@@ -90,7 +90,52 @@ zostanie wpisane Gdańsk</dd>
 
 ## FAQ, czyli często zadawane pytania
 
-1\. W pliku *magisterka.tex* ustawione są domyślne fonty
+1\. Polecenia `\autor`, `\nralbumu` (ewentualnie
+`\email`) można wstawić wielokrotnie jeżeli praca jest
+dziełem kilku autorów.
+
+2\. Aby rozdziały zaczynały się na stronach nieparzystych
+dopisujemy opcję *openright*:
+
+    \documentclass[openright]{xmgr}
+
+3\. Listingi programów składamy korzystając z pakietu Konrada Rudolpha
+[minted](http://code.google.com/p/minted/downloads/list).
+Jak zainstalować pakiet i przykłady są opisane  [dokumentacji](http://code.google.com/p/minted/downloads/detail?name=minted.pdf&can=2&q=).
+
+Kod wpisujemy korzystając ze środowiska _minted_.
+Przykładowo kod w języku Ruby wpisujemy w taki sposób:
+
+```ruby
+\begin{minted}{ruby}
+class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  # GET /articles
+  # GET /articles.json
+  def index
+    @articles = Article.all
+  end
+end
+\end{minted}
+```
+
+Pracę z fragmentami kodu kompilujemy za pomocą polecenia:
+
+```sh
+xelatex -shell-escape magisterka.tex
+```
+
+Wcześniej należy odkomentować w pliku _magisterka.tex_ wiersz:
+
+```tex
+\usepackage{minted}
+```
+
+4\. Do składania podziękowań, dydykacji oraz umieszczania w pracy
+cytatów można posłużyć się klasą
+[epigraph](http://www.tex.ac.uk/tex-archive/help/Catalogue/entries/epigraph.html).
+
+5\. W pliku *magisterka.tex* ustawione są domyślne fonty
 
     \setmainfont[Numbers=OldStyle,Mapping=tex-text]{Minion Pro}
     \setsansfont[Numbers=OldStyle,Mapping=tex-text]{Myriad Pro}
@@ -105,8 +150,8 @@ W tym celu w kopiujemy fonty do katalogu *~/.fonts/* i wykonujemy
 polecenie *fc-cache*:
 
     mkdir -p ~/.fonts/adobe
-    cp ⟨ścieżka do katalogu z fontami⟩/{Minion,Myriad}*.otf ~/.fonts/adobe
-    fc-cache ~/.fonts
+    cp ⟨ścieżka do katalogu z fontami⟩/{Minion,Myriad}\*.otf \
+    ~/.fonts/adobe fc-cache ~/.fonts
 
 Na koniec sprawdzamy czy fonty zostały poprawnie zainstalowane:
 
@@ -119,23 +164,6 @@ Na koniec sprawdzamy czy fonty zostały poprawnie zainstalowane:
       Myriad Pro:style=Bold Italic
       Myriad Pro:style=Italic
       Myriad Pro:style=Regular
-
-2\. Polecenia `\autor`, `\nralbumu` (ewentualnie
-`\email`) można wstawić wielokrotnie jeżeli praca jest
-dziełem kilku autorów.
-
-3\. Aby rozdziały zaczynały się na stronach nieparzystych
-dopisujemy opcję *openright*:
-
-    \documentclass[openright]{xmgr}
-
-4\. Do składania podziękowań, dydykacji oraz umieszczania w pracy
-cytatów można posłużyć się klasą
-[epigraph](http://www.tex.ac.uk/tex-archive/help/Catalogue/entries/epigraph.html).
-
-5\. Listingi programów składamy korzystając z pakietu Konrada Rudolpha
-o nazwie [minted](http://code.google.com/p/minted/downloads/list).
-Instalacja pakietu jest opisana w [dokumentacji](http://code.google.com/p/minted/downloads/detail?name=minted.pdf&can=2&q=).
 
 
 ## Przykłady szablonów

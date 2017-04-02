@@ -2,6 +2,9 @@
 % Jeśli nowe rozdziały mają się zaczynać na stronach nieparzystych:
 %\documentclass[openright]{xmgr}
 
+% install minted package to highlight source code
+% \usepackage{minted}
+
 %\defaultfontfeatures{Scale=MatchLowercase}
 %\setmainfont[Numbers=OldStyle,Ligatures=TeX]{Minion Pro}
 %\setsansfont[Numbers=OldStyle,Ligatures=TeX]{Myriad Pro}
@@ -99,6 +102,17 @@ wykorzystywanie dokumentów, także w sposób inny od poprzedniego
 (np. tradycyjna książka i~dokument multimedialny utworzony z~tego
 samego dokumentu SGML-owego).
 \end{itemize}
+
+\begin{minted}{ruby}
+class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  # GET /articles
+  # GET /articles.json
+  def index
+    @articles = Article.all
+  end
+end
+\end{minted}
 
 Standard służy jedynie do opisywania logicznej struktury dokumentów,
 nie determinuje ostatecznej formy prezentacji informacji, która może
