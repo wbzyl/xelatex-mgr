@@ -131,6 +131,8 @@ Wcześniej należy odkomentować w pliku _magisterka.tex_ wiersz:
 \usepackage{minted}
 ```
 
+i zainstalować język Python oraz pakiet [Pygments](http://pygments.org/)
+
 4\. Do składania podziękowań, dydykacji oraz umieszczania w pracy
 cytatów można posłużyć się klasą
 [epigraph](http://www.tex.ac.uk/tex-archive/help/Catalogue/entries/epigraph.html).
