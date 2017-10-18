@@ -137,19 +137,19 @@ i zainstalować język Python oraz pakiet [Pygments](http://pygments.org/).
 cytatów można posłużyć się klasą
 [epigraph](http://www.tex.ac.uk/tex-archive/help/Catalogue/entries/epigraph.html).
 
-5\. W pliku *magisterka.tex* ustawione są domyślne fonty
+5\. Tekst pracy można złożyć dowolnymi fontami w formacie TTF lub OTF zainstalowanymi na komputerze. 
+Przykład pokazujący jak to zrobić umieszczono w komentarzu na początku pliku *magisterka.tex*.
+W przykładzie użyto fontów _Minion Pro_ i _Myriad Pro_:
 
     \setmainfont[Numbers=OldStyle,Mapping=tex-text]{Minion Pro}
     \setsansfont[Numbers=OldStyle,Mapping=tex-text]{Myriad Pro}
 
-Fonty *Minion Pro* oraz *Myriad Pro*  częścią oprogramowania
+Fonty *Minion Pro* oraz *Myriad Pro* są częścią oprogramowania
 [Acrobat Reader](http://get.adobe.com/pl/reader/otherversions/).
 Jeśli po instalacji *Acrobat Readera* program *XeLaTeX*
 nie potrafi ich znaleźć, to możemy je zainstalować samemu.
 W Linuksie może to zrobić zwykły użytkownik.
-
-W tym celu w kopiujemy fonty do katalogu *~/.fonts/* i wykonujemy
-polecenie *fc-cache*:
+W tym celu w kopiujemy fonty do katalogu *~/.fonts/* i wykonujemy polecenie *fc-cache*:
 
     mkdir -p ~/.fonts/adobe
     cp ⟨ścieżka do katalogu z fontami⟩/{Minion,Myriad}\*.otf \
@@ -166,7 +166,6 @@ Na koniec sprawdzamy czy fonty zostały poprawnie zainstalowane:
       Myriad Pro:style=Bold Italic
       Myriad Pro:style=Italic
       Myriad Pro:style=Regular
-
 
 ## Przykłady szablonów
 
