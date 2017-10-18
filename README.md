@@ -4,7 +4,7 @@ Klasa *xmgr.cls* umożliwia sprawne i wygodne przygotowanie w systemie
 **XeLaTeX** pracy magisterskiej zgodnie z wymogami obowiązującymi na
 kierunku Informatyka.
 
-Klasa jest adaptacją [wzmgr.cls] [wzmgr]
+Klasa jest adaptacją [wzmgr](http://gnu.univ.gda.pl/~tomasz/prog/tex/wzmgr/wzmgr.html)
 opracowanej przez Tomasza Przechlewskiego dla Wydziału Zarządzania, UG.
 
 Klasa *xmgr* to zmodyfikowana klasa standardowa *report*
@@ -179,10 +179,5 @@ używający pakietu *amsrefs*.
 
 Szablony te są też dostępne tutaj:
 
-* [xelatex + bibtex] [szablon-bibtex]
-* [xelatex + amsrefs] [szablon-amsrefs]
-
-
-[szablon-bibtex]: http://gist.github.com/263713 "bibtex"
-[szablon-amsrefs]: http://gist.github.com/263715 "amsrefs"
-[wzmgr]: http://gnu.univ.gda.pl/~tomasz/prog/tex/wzmgr/wzmgr.html "wzmgr"
+* [xelatex + bibtex](http://gist.github.com/263713)
+* [xelatex + amsrefs](http://gist.github.com/263715)
